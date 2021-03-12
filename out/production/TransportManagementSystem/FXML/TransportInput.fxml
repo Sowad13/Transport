@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane prefHeight="434.0" prefWidth="610.0" style="-fx-background-color: #393e46;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TransportInput">
+   <graphic>
+      <GridPane prefHeight="336.0" prefWidth="590.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="111.0" prefWidth="314.0" style="-fx-background-color: #393e46;" text="Transport plate No" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Transport_Condition" alignment="CENTER" prefHeight="109.0" prefWidth="294.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" prefHeight="126.0" prefWidth="295.0" text="Class Name" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Bell MT Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Class_Name" alignment="CENTER" prefHeight="42.0" prefWidth="272.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="111.0" prefWidth="314.0" style="-fx-background-color: #393e46;" text="Garage Id" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Bell MT Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Garage_Id" alignment="CENTER" prefHeight="42.0" prefWidth="272.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="111.0" prefWidth="314.0" style="-fx-background-color: #393e46;" text="Servicing query" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Bell MT Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Capacity" alignment="CENTER" prefHeight="109.0" prefWidth="294.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="111.0" prefWidth="314.0" style="-fx-background-color: #393e46;" text="Servicing Cost" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Bell MT Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Servicing_query" alignment="CENTER" prefHeight="42.0" prefWidth="287.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="111.0" prefWidth="314.0" style="-fx-background-color: #393e46;" text="Insurance" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Bell MT Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Servicing_Cost" alignment="CENTER" prefHeight="42.0" prefWidth="261.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="111.0" prefWidth="314.0" style="-fx-background-color: #393e46;" text="Capacity" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="6">
+               <font>
+                  <Font name="Bell MT Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Insurance" alignment="CENTER" prefHeight="42.0" prefWidth="267.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="111.0" prefWidth="314.0" style="-fx-background-color: #393e46;" text="Transport Condition" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="7">
+               <font>
+                  <Font name="Bell MT Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Transport_plate_No" alignment="CENTER" prefHeight="42.0" prefWidth="270.0" GridPane.columnIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+         </children>
+      </GridPane>
+   </graphic>
+   <buttonTypes>
+      <ButtonType fx:constant="APPLY" />
+      <ButtonType fx:constant="CANCEL" />
+   </buttonTypes>
+</DialogPane>
