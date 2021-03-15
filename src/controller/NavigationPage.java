@@ -1,15 +1,19 @@
 package controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
 import javafx.fxml.FXML;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -24,18 +28,29 @@ public class NavigationPage implements Initializable {
 
     @FXML
     private Label menuback;*/
+    @FXML
+    private JFXButton driver_id;
 
     @FXML
     private AnchorPane paneOne;
+
+    @FXML
+    private AnchorPane iconbar;
+
+    @FXML
+    private JFXButton staff_id;
+
+    @FXML
+    private AnchorPane show_info;
+
+    @FXML
+    private JFXButton transport_id;
 
     @FXML
     private AnchorPane paneTwo;
 
     @FXML
     private Label menu;
-
-    @FXML
-    private AnchorPane iconbar;
 
 
     @Override
@@ -119,6 +134,41 @@ public class NavigationPage implements Initializable {
                 menuback.setVisible(false);
             });
         });*/
+
+
+        transport_id.setOnAction(actionEvent ->{
+
+
+            try {
+                Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/Show_transport.fxml"));
+
+                show_info.getChildren().removeAll();
+                show_info.getChildren().setAll(fxml);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+
+        driver_id.setOnAction(actionEvent ->{
+
+
+            try {
+                Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/Show_Driver.fxml"));
+
+                show_info.getChildren().removeAll();
+                show_info.getChildren().setAll(fxml);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+
+
 
 
     }

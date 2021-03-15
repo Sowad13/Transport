@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NavigationPage">
    <children>
-      <AnchorPane prefHeight="50.0" prefWidth="1280.0" style="-fx-background-color: #000;">
+      <AnchorPane layoutX="1.0" prefHeight="63.0" prefWidth="1280.0" style="-fx-background-color: #393e46;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label fx:id="menu" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="9.0" prefHeight="50.0" prefWidth="120.0" text="Menu" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="10.0">
                <font>
@@ -26,98 +26,85 @@
                   </ImageView>
                </graphic>
             </Label>
+            <Label alignment="CENTER" layoutX="538.0" layoutY="22.0" prefHeight="23.0" prefWidth="184.0" text="Jaanbahon" textFill="WHITE" AnchorPane.leftAnchor="545.0" AnchorPane.rightAnchor="545.0">
+               <font>
+                  <Font name="Arial Bold" size="32.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutY="59.0" prefHeight="671.0" prefWidth="60.0" style="-fx-background-color: #cc00cc;" AnchorPane.topAnchor="50.0">
+      <AnchorPane fx:id="show_info" layoutX="61.0" layoutY="80.0" prefHeight="641.0" prefWidth="1223.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="63.0" />
+      <AnchorPane fx:id="paneOne" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane fx:id="iconbar" layoutX="10.0" layoutY="10.0" prefHeight="640.0" prefWidth="60.0" style="-fx-background-color: #b300b3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="63.0">
          <children>
-            <VBox alignment="TOP_CENTER" layoutY="6.0" prefHeight="314.0" prefWidth="60.0" spacing="25.0" AnchorPane.topAnchor="53.0">
+            <VBox alignment="TOP_CENTER" layoutY="47.0" prefHeight="594.0" prefWidth="60.0" spacing="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="47.0">
                <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/dashboard.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/bus.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/seatbelt.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/pen.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/workers.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </VBox>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="paneOne" prefHeight="721.0" prefWidth="1280.0" style="-fx-background-color: black;" />
-      <AnchorPane fx:id="iconbar" prefHeight="662.0" prefWidth="41.0" style="-fx-background-color: #cc00cc;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="50.0">
-         <children>
-            <VBox alignment="TOP_CENTER" layoutY="49.0" prefHeight="314.0" prefWidth="60.0" spacing="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="53.0">
-               <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/bus.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/seatbelt.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/pen.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/workers.png" />
+                        <Image url="@../Images/car-in-garage.png" />
                      </image>
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/workers.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/setting.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/logout.png" />
+                     </image>
+                  </ImageView>
                </children>
             </VBox>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="paneTwo" prefHeight="671.0" prefWidth="250.0" style="-fx-background-color: purple;" styleClass="sliderItem" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="971.0" AnchorPane.topAnchor="50.0">
+      <AnchorPane fx:id="paneTwo" layoutX="60.0" layoutY="80.0" prefHeight="651.0" prefWidth="250.0" style="-fx-background-color: purple;" styleClass="sliderItem" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="972.0" AnchorPane.topAnchor="63.0">
          <children>
-            <VBox layoutY="47.0" prefHeight="244.0" prefWidth="250.0" AnchorPane.topAnchor="40.0">
+            <VBox layoutY="47.0" prefHeight="594.0" prefWidth="250.0" spacing="10.0" AnchorPane.topAnchor="40.0">
                <children>
-                  <JFXButton alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Transport" textFill="WHITE">
+                  <JFXButton alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Dashboard" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
-                     <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Images/bus.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
                      <padding>
                         <Insets left="20.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Driver" textFill="WHITE">
+                  <JFXButton fx:id="transport_id" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Transport" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
-                     <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Images/seatbelt.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton fx:id="driver_id" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Driver" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
                      <padding>
                         <Insets left="20.0" />
                      </padding>
@@ -126,28 +113,30 @@
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
-                     <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Images/pen.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
                      <padding>
                         <Insets left="20.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Staff" textFill="WHITE">
+                  <JFXButton fx:id="staff_id" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Staff" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
-                     <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Images/workers.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Settings" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Logout" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
                      <padding>
                         <Insets left="20.0" />
                      </padding>
