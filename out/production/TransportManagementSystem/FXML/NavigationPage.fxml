@@ -74,6 +74,11 @@
                   </ImageView>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
+                        <Image url="@../Images/navigation.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
                         <Image url="@../Images/logout.png" />
                      </image>
                   </ImageView>
@@ -126,6 +131,14 @@
                      </padding>
                   </JFXButton>
                   <JFXButton alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Settings" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton fx:id="route_id" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" text="Route" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>

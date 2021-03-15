@@ -1,26 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXML.ShowRoute">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ShowRoute">
    <children>
-      <TableView fx:id="route_tableView" prefHeight="400.0" prefWidth="602.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <columns>
-          <TableColumn fx:id="routeid" prefWidth="75.0" text="Route Id" />
-          <TableColumn fx:id="tollfee" prefWidth="75.0" text="Toll Fee" />
-            <TableColumn fx:id="startingpoint" prefWidth="108.0" text="Starting Point" />
-            <TableColumn fx:id="destination" prefWidth="96.0" text="Destination" />
-            <TableColumn fx:id="traveltime" prefWidth="127.0" text="Travel Time" />
-            <TableColumn fx:id="intervalpoint" prefWidth="120.0" text="Interval Point" />
-        </columns>
+      <TableView fx:id="route_tableView" prefHeight="540.0" prefWidth="1223.0" stylesheets="@../style.css">
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
+         <columns>
+            <TableColumn fx:id="route_Id" prefWidth="59.0" text="Route ID" />
+            <TableColumn fx:id="toll_fee" minWidth="1.0" prefWidth="91.0" text="Toll Fee" />
+            <TableColumn fx:id="starting_point" prefWidth="75.0" text="Starting Point" />
+            <TableColumn fx:id="destination" prefWidth="75.0" text="Destination" />
+            <TableColumn fx:id="travel_time" prefWidth="75.0" text="Travel Time" />
+            <TableColumn fx:id="interval_point" prefWidth="75.0" text="Interval Point" />
+         </columns>
       </TableView>
+      <VBox prefHeight="111.0" prefWidth="1223.0" spacing="5.0" AnchorPane.topAnchor="540.0">
+         <children>
+            <JFXButton alignment="BASELINE_CENTER" prefHeight="52.0" prefWidth="1223.0" style="-fx-background-color: #393e46;" text="ADD" textFill="#fffefe">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../out/production/TransportManagementSystem/Images/add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="52.0" prefWidth="1223.0" style="-fx-background-color: #393e46;" text="ADD" textFill="#fffefe">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../out/production/TransportManagementSystem/Images/add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

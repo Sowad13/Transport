@@ -9,7 +9,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sample.ConnectMSSQL;
-import sample.Driver;
 import sample.Route;
 
 import java.net.URL;
@@ -24,22 +23,22 @@ public class ShowRoute implements Initializable {
     private TableView<Route> route_tableView;
 
     @FXML
-    private TableColumn<?, ?> routeid;
+    private TableColumn<?, ?> route_Id;
 
     @FXML
-    private TableColumn<?, ?> tollfee;
+    private TableColumn<?, ?> toll_fee;
 
     @FXML
-    private TableColumn<?, ?> startingpoint;
+    private TableColumn<?, ?> starting_point;
 
     @FXML
     private TableColumn<?, ?> destination;
 
     @FXML
-    private TableColumn<?, ?> traveltime;
+    private TableColumn<?, ?> travel_time;
 
     @FXML
-    private TableColumn<?, ?> intervalpoint;
+    private TableColumn<?, ?> interval_point;
 
 
     @FXML
@@ -70,12 +69,12 @@ public class ShowRoute implements Initializable {
 
     private void initTable() {
 
-        routeid.setCellValueFactory(new PropertyValueFactory<>("routeid"));
-        tollfee.setCellValueFactory(new PropertyValueFactory<>("tollfee"));
-        startingpoint.setCellValueFactory(new PropertyValueFactory<>("startingpoint"));
+        route_Id.setCellValueFactory(new PropertyValueFactory<>("routeid"));
+        toll_fee.setCellValueFactory(new PropertyValueFactory<>("tollfee"));
+        starting_point.setCellValueFactory(new PropertyValueFactory<>("startingpoint"));
         destination.setCellValueFactory(new PropertyValueFactory<>("destination"));
-        traveltime.setCellValueFactory(new PropertyValueFactory<>("traveltime"));
-        intervalpoint.setCellValueFactory(new PropertyValueFactory<>("intervalpoint"));
+        travel_time.setCellValueFactory(new PropertyValueFactory<>("traveltime"));
+        interval_point.setCellValueFactory(new PropertyValueFactory<>("intervalpoint"));
 
 
     }
@@ -89,16 +88,16 @@ public class ShowRoute implements Initializable {
 
         while (rs.next())
         {
-            System.out.println(rs.getString("Route Id"));
-            System.out.println(rs.getString("Toll Fee"));
-            System.out.println(rs.getString("Starting Point"));
+            System.out.println(rs.getString("Route_id"));
+            System.out.println(rs.getString("Toll_fee"));
+            System.out.println(rs.getString("Starting_point"));
             System.out.println(rs.getString("Destination"));
-            System.out.println(rs.getString("Travel Time"));
-            System.out.println(rs.getString("Interval Point"));
+            System.out.println(rs.getString("Travel_time"));
+            System.out.println(rs.getString("Interval_point"));
 
-            RouteObservableList.add(new Route(rs.getInt("Route Id"), rs.getInt("Toll Fee"),
-                    rs.getString("Starting Point"), rs.getString("Destination"), rs.getInt("Travel Time"),
-                    rs.getString("Interval Point")) {
+            RouteObservableList.add(new Route(rs.getInt("Route_id"), rs.getInt("Toll_fee"),
+                    rs.getString("Starting_point"), rs.getString("Destination"), rs.getInt("Travel_time"),
+                    rs.getString("Interval_point")) {
             });
 
         }

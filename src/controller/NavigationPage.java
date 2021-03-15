@@ -47,6 +47,9 @@ public class NavigationPage implements Initializable {
     private JFXButton transport_id;
 
     @FXML
+    private JFXButton route_id;
+
+    @FXML
     private AnchorPane paneTwo;
 
     @FXML
@@ -157,6 +160,23 @@ public class NavigationPage implements Initializable {
 
             try {
                 Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/Show_Driver.fxml"));
+
+                show_info.getChildren().removeAll();
+                show_info.getChildren().setAll(fxml);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+
+
+        route_id.setOnAction(actionEvent ->{
+
+
+            try {
+                Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/Show_Route.fxml"));
 
                 show_info.getChildren().removeAll();
                 show_info.getChildren().setAll(fxml);
