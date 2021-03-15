@@ -39,10 +39,7 @@ public class TransportInput  implements Initializable {
 
 
     public String getTransport_Condition() {
-        if(Transport_plate_No.getText()=="")
-        {
-            return "EROOORR";
-        }
+
 
         return Transport_Condition.getText();
     }
@@ -52,24 +49,25 @@ public class TransportInput  implements Initializable {
         return Class_Name.getText();
     }
 
-    public String getGarage_Id() {
-        return Garage_Id.getText();
+    public int getGarage_Id() {
+
+        return Integer.parseInt(Garage_Id.getText()) ;
     }
 
-    public String getCapacity() {
-        return Capacity.getText();
+    public int getCapacity() {
+        return Integer.parseInt(Capacity.getText());
     }
 
     public String getServicing_query() {
         return Servicing_query.getText();
     }
 
-    public String getServicing_Cost() {
-        return Servicing_Cost.getText();
+    public int getServicing_Cost() {
+        return Integer.parseInt( Servicing_Cost.getText());
     }
 
-    public String getInsurance() {
-        return Insurance.getText();
+    public int getInsurance() {
+        return Integer.parseInt( Insurance.getText());
     }
 
     public String getTransport_plate_No() {

@@ -12,6 +12,7 @@ import sample.Transport;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -97,7 +98,7 @@ public class ShowTransport implements Initializable {
 
                 }
 
-            } catch (IOException e) {
+            } catch (IOException | SQLException e) {
                 e.printStackTrace();
             }
 
@@ -141,17 +142,25 @@ public class ShowTransport implements Initializable {
     }
 
 
-void save_Data(TransportInput transportInput )
-{
+void save_Data(TransportInput transportInput ) throws SQLException {
 
-    System.out.println(transportInput.getClass_Name());
-    System.out.println(transportInput.getServicing_Cost());
-    System.out.println(transportInput.getTransport_plate_No());
-    System.out.println(transportInput.getServicing_Cost());
-    System.out.println(transportInput.getCapacity());
-    System.out.println(transportInput.getInsurance());
-    System.out.println(transportInput.getGarage_Id());
-    System.out.println(transportInput.getServicing_query());
+    ConnectMSSQL Database = new ConnectMSSQL();
+
+    PreparedStatement statement  =  Database.connectDB().prepareStatement("INSERT INTO Transport VALUES ('"+transportInput.getTransport_plate_No()+"','"+transportInput.getClass_Name()+"','"+transportInput.getGarage_Id()+"','"+transportInput.getInsurance()+"','"+transportInput.getServicing_Cost()+"','"+transportInput.getServicing_query()+"','"+transportInput.getCapacity()+"','"+transportInput.getTransport_Condition()+"')");
+    statement.executeQuery();
+
+
+
+
+//    System.out.println(transportInput.getClass_Name());
+//    System.out.println(transportInput.getTransport_Condition());
+//    System.out.println(transportInput.getServicing_Cost());
+//    System.out.println(transportInput.getTransport_plate_No());
+//    System.out.println(transportInput.getServicing_Cost());
+//    System.out.println(transportInput.getCapacity());
+//    System.out.println(transportInput.getInsurance());
+//    System.out.println(transportInput.getGarage_Id());
+//    System.out.println(transportInput.getServicing_query());
 
 }
 

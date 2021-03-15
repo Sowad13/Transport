@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginPage">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" stylesheets="@../style.css">
+         <left>
+            <AnchorPane fx:id="slider" prefHeight="520.0" prefWidth="465.0" style="-fx-background-color: purple;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="96.0" layoutY="612.0" text="Welcome to Jaanbahon" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="196.0" fitWidth="156.0" layoutX="162.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/bus.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="menuback" layoutX="124.0" layoutY="205.0" prefHeight="50.0" prefWidth="120.0" text="Name">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/profile-user.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label fx:id="menu" layoutX="124.0" layoutY="265.0" prefHeight="50.0" prefWidth="120.0" text="Password">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/padlock.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <JFXTextField layoutX="312.0" layoutY="215.0" prefHeight="25.0" prefWidth="230.0" promptText="Name" AnchorPane.leftAnchor="312.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXPasswordField layoutX="312.0" layoutY="275.0" prefHeight="25.0" prefWidth="230.0" promptText="Password" AnchorPane.leftAnchor="312.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="337.0" layoutY="360.0" prefHeight="40.0" prefWidth="125.0" ripplerFill="#b628c3" text="Log in">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="363.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/profile.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
