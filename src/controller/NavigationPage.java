@@ -38,7 +38,7 @@ public class NavigationPage implements Initializable {
     private AnchorPane iconbar;
 
     @FXML
-    private JFXButton staff_id;
+    private JFXButton staffID;
 
     @FXML
     private AnchorPane show_info;
@@ -160,6 +160,22 @@ public class NavigationPage implements Initializable {
 
             try {
                 Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/Show_Driver.fxml"));
+
+                show_info.getChildren().removeAll();
+                show_info.getChildren().setAll(fxml);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+
+        staffID.setOnAction(actionEvent ->{
+
+
+            try {
+                Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/StaffShow.fxml"));
 
                 show_info.getChildren().removeAll();
                 show_info.getChildren().setAll(fxml);

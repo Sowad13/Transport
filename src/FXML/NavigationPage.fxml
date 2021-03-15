@@ -122,7 +122,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton fx:id="staff_id" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Staff" textFill="WHITE">
+                  <JFXButton fx:id="staffID" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Staff" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
