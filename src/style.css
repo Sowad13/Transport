@@ -5,3 +5,10 @@
     -fx-border-width: 0px 0px 0px 3px;
     -fx-background-color: black;
 }
+
+
+.sliderItem:hover{
+
+    -fx-border-width: 0px 0px 0px 3px;
+    -fx-background-color: #cc00cc;
+}
