@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 public class MainDashboard implements Initializable {
 
     @FXML
@@ -19,6 +20,9 @@ public class MainDashboard implements Initializable {
 
     @FXML
     private AnchorPane show_info;
+
+    @FXML
+    private JFXButton available_transport;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -39,6 +43,22 @@ public class MainDashboard implements Initializable {
 
         });
 
+
+
+        available_transport.setOnAction(actionEvent ->{
+
+            try {
+                Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/Transport_available.fxml"));
+
+                show_info.getChildren().removeAll();
+               show_info.getChildren().setAll(fxml);
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        });
 
     }
 }

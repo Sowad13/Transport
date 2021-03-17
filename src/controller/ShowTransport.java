@@ -9,7 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sample.ConnectMSSQL;
 import sample.Transport;
-
+import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.PreparedStatement;
@@ -18,6 +18,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.scene.image.ImageView;
+
 
 public class ShowTransport implements Initializable {
 
@@ -49,10 +51,13 @@ public class ShowTransport implements Initializable {
     private TableColumn<?, ?> table_TransportCondition;
 
     @FXML
-    private Button add_btn;
+    private ImageView searchButton;
 
     @FXML
-    private Button edit_btn;
+    private JFXButton edit_btn;
+
+    @FXML
+    private JFXButton add_btn;
 
     private String query;
 
@@ -73,6 +78,7 @@ public class ShowTransport implements Initializable {
         }
 
         transport_tableView.setItems(TransportObservableList);
+
 
 
         add_btn.setOnAction(actionEvent->{
