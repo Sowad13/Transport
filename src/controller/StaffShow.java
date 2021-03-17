@@ -44,7 +44,7 @@ public class StaffShow implements Initializable {
     @FXML
     private TableColumn<?, ?> staff_id;
 
-    private String query;
+    private String query,querycount;
 
     private ObservableList<Staff> StaffObservableList;
     int index = -1;
@@ -112,6 +112,13 @@ public class StaffShow implements Initializable {
         Statement statement = Database.connectDB().createStatement();
         query = "SELECT * FROM Garage_staff";
         ResultSet rs = statement.executeQuery(query);
+
+        Statement statementcount = Database.connectDB().createStatement();
+        querycount = "select count(*) from Garage_staff";
+        ResultSet ct = statementcount.executeQuery(querycount);
+        ct.next();
+        int count = ct.getInt(1);
+        System.out.println("Number of records in the cricketers_data table: "+count);
 
         while(rs.next()) {
             System.out.println(rs.getString("Staff_id"));

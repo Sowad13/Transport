@@ -12,9 +12,13 @@ import javafx.scene.layout.AnchorPane;
 
 import javafx.fxml.FXML;
 import javafx.util.Duration;
+import sample.ConnectMSSQL;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class NavigationPage implements Initializable {
@@ -55,9 +59,53 @@ public class NavigationPage implements Initializable {
     @FXML
     private Label menu;
 
+    @FXML
+    private Label transportCount;
+
+
+    @FXML
+    private Label garageCount;
+
+
+    @FXML
+    private Label staffCount;
+
+    @FXML
+    private Label reservedCount;
+
+    @FXML
+    private JFXButton dashboardButton;
+
+
+
+    private String querycount;
+    private  String Tcount,Gcount,Scount,Rcount;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+
+        try {
+            Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/Main_dashboard.fxml"));
+
+            show_info.getChildren().removeAll();
+            show_info.getChildren().setAll(fxml);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            loadFromDatabase();
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+        transportCount.setText(Tcount);
+        garageCount.setText(Gcount);
+        staffCount.setText(Scount);
+        reservedCount.setText(Rcount);
+
 
         paneOne.setVisible(false);
         FadeTransition fadeTransition = new FadeTransition(Duration.seconds(0.5),paneOne);
@@ -204,8 +252,52 @@ public class NavigationPage implements Initializable {
 
         });
 
+        dashboardButton.setOnAction(actionEvent ->{
 
 
+            try {
+                Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/Main_dashboard.fxml"));
+
+                show_info.getChildren().removeAll();
+                show_info.getChildren().setAll(fxml);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        });
 
     }
+
+    private void loadFromDatabase() throws SQLException, ClassNotFoundException {
+        ConnectMSSQL Database = new ConnectMSSQL();
+        Statement statementcount = Database.connectDB().createStatement();
+        querycount = "select count(*) from  Transport";
+        ResultSet tc = statementcount.executeQuery(querycount);
+        tc.next();
+        Tcount = tc.getString(1);
+        System.out.println("Number of records  " + Tcount);
+
+        querycount = "select count(*) from  Garage";
+        ResultSet ct = statementcount.executeQuery(querycount);
+        ct.next();
+        Gcount = ct.getString(1);
+        System.out.println("Number of records " + Gcount);
+
+        querycount = "select count(*) from  Garage_staff";
+        ResultSet st = statementcount.executeQuery(querycount);
+        st.next();
+        Scount = st.getString(1);
+        System.out.println("Number of records " + Scount);
+
+        querycount = "select count(*) from  Reserve";
+        ResultSet rc = statementcount.executeQuery(querycount);
+        rc.next();
+        Rcount = rc.getString(1);
+        System.out.println("Number of records " + Rcount);
+
+    }
+
+
 }

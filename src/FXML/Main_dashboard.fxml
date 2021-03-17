@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
@@ -9,76 +16,33 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="667.0" prefWidth="1112.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ShowTransport">
+<AnchorPane prefHeight="641.0" prefWidth="1223.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainDashboard">
    <children>
-      <VBox prefHeight="667.0" prefWidth="1112.0" stylesheets="@../style.css">
+      <VBox prefHeight="641.0" prefWidth="1223.0" spacing="40.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox prefHeight="101.0" prefWidth="1106.0" spacing="7.0">
+            <HBox alignment="CENTER" prefHeight="113.0" prefWidth="811.0" spacing="40.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="113.0" prefWidth="210.0" style="-fx-background-color: #393e46;" text="  Reserve" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="83.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Images/booking.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font name="Bell MT Bold" size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="5.0" top="5.0" />
-                     </HBox.margin>
-                     <padding>
-                        <Insets bottom="15.0" top="15.0" />
-                     </padding>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="130.0" prefWidth="210.0" style="-fx-background-color: #393e46;" styleClass="sidebarItem" text="Available" textFill="WHITE">
-                     <HBox.margin>
-                        <Insets left="5.0" top="5.0" />
-                     </HBox.margin>
-                     <padding>
-                        <Insets bottom="15.0" top="15.0" />
-                     </padding>
-                     <graphic>
-                        <ImageView fitHeight="77.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Images/check.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font name="Bell MT Bold" size="18.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="130.0" prefWidth="210.0" style="-fx-background-color: #393e46;" styleClass="sidebarItem" text="Button">
-                     <HBox.margin>
-                        <Insets left="5.0" top="5.0" />
-                     </HBox.margin>
-                     <padding>
-                        <Insets bottom="15.0" top="15.0" />
-                     </padding>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="130.0" prefWidth="210.0" style="-fx-background-color: #393e46;" styleClass="sidebarItem" text="Button">
-                     <HBox.margin>
-                        <Insets left="5.0" top="5.0" />
-                     </HBox.margin>
-                     <padding>
-                        <Insets bottom="15.0" top="15.0" />
-                     </padding>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="130.0" prefWidth="210.0" style="-fx-background-color: #393e46;" styleClass="sidebarItem" text="Button">
-                     <HBox.margin>
-                        <Insets left="5.0" top="5.0" />
-                     </HBox.margin>
-                     <padding>
-                        <Insets bottom="15.0" top="15.0" />
-                     </padding>
-                  </Button>
+                  <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
+                  <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
+                  <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
                </children>
                <VBox.margin>
-                  <Insets />
+                  <Insets top="100.0" />
                </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="120.0" prefWidth="735.0" spacing="40.0">
+               <children>
+                  <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
+                  <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
+                  <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="122.0" prefWidth="728.0" spacing="40.0">
+               <children>
+                  <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
+                  <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
+                  <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
+               </children>
             </HBox>
          </children>
       </VBox>

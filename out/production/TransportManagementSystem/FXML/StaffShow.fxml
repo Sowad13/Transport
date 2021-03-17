@@ -10,9 +10,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="540.0" prefWidth="1223.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StaffShow">
+<AnchorPane prefHeight="641.0" prefWidth="1223.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StaffShow">
    <children>
-      <TableView fx:id="staffTableShow" prefHeight="540.0" prefWidth="1223.0" stylesheets="@../style.css">
+      <TableView fx:id="staffTableShow" layoutY="104.0" prefHeight="535.0" prefWidth="1223.0" stylesheets="@../style.css" AnchorPane.topAnchor="0.0">
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
@@ -25,7 +25,7 @@
             <TableColumn fx:id="medical_insurance" prefWidth="75.0" text="Medical Insurance" />
          </columns>
       </TableView>
-      <VBox prefHeight="111.0" prefWidth="1223.0" spacing="5.0" AnchorPane.topAnchor="540.0">
+      <VBox prefHeight="100.0" prefWidth="1223.0" spacing="5.0" AnchorPane.topAnchor="535.0">
          <children>
             <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="1223.0" style="-fx-background-color: #393e46;" text="ADD" textFill="WHITE">
                <font>
