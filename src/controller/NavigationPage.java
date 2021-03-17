@@ -57,6 +57,10 @@ public class NavigationPage implements Initializable {
     private AnchorPane paneTwo;
 
     @FXML
+    private JFXButton dash_bord_btn;
+
+
+    @FXML
     private Label menu;
 
     @FXML
@@ -84,6 +88,21 @@ public class NavigationPage implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        dashboardButton.setOnAction(actionEvent ->{
+
+            try {
+                Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/Main_dashboard.fxml"));
+
+                show_info.getChildren().removeAll();
+                show_info.getChildren().setAll(fxml);
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        });
 
 
         try {
@@ -150,6 +169,16 @@ public class NavigationPage implements Initializable {
             translateTransition1.play();
 
         });
+
+        try {
+            Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/Main_dashboard.fxml"));
+
+            show_info.getChildren().removeAll();
+            show_info.getChildren().setAll(fxml);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
 
        /* slider.setTranslateX(-176);
         menu.setOnMouseClicked(event -> {
