@@ -63,9 +63,9 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="30.0" fitWidth="30.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/settings.jpg" />
+                        <Image url="@../Images/menu-4-64.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -92,14 +92,6 @@
                      <image>
                         <Image url="@../Images/seatbelt.png" />
                      </image>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/car-in-garage.png" />
-                     </image>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
                   </ImageView>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -146,14 +138,6 @@
                      </padding>
                   </JFXButton>
                   <JFXButton fx:id="driver_id" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Driver" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                     <padding>
-                        <Insets left="20.0" />
-                     </padding>
-                  </JFXButton>
-                  <JFXButton alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Garage" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>

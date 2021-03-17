@@ -9,7 +9,7 @@ import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
-   // double x,y = 0;
+    double x,y = 0;
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../FXML/loginPage.fxml")) ;

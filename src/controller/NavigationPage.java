@@ -89,6 +89,7 @@ public class NavigationPage implements Initializable {
         try {
             Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/Main_dashboard.fxml"));
 
+
             show_info.getChildren().removeAll();
             show_info.getChildren().setAll(fxml);
 
@@ -289,6 +290,12 @@ public class NavigationPage implements Initializable {
         ResultSet st = statementcount.executeQuery(querycount);
         st.next();
         Scount = st.getString(1);
+        System.out.println("Number of records " + Scount);
+
+        querycount = "select count(*) from  Transport_staff";
+        ResultSet ts = statementcount.executeQuery(querycount);
+        ts.next();
+        Scount = ts.getString(1);
         System.out.println("Number of records " + Scount);
 
         querycount = "select count(*) from  Reserve";

@@ -22,6 +22,9 @@ public class LoginPage implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+     /*   Exit.setOnMouseClicked(event -> {
+            System.exit(0);
+        });*/
 
 
         loginButton.setOnAction(actionEvent->{
