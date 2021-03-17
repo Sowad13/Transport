@@ -83,7 +83,8 @@ public class NavigationPage implements Initializable {
 
 
     private String querycount;
-    private  String Tcount,Gcount,Scount,Rcount;
+    private  String Tcount,Gcount,Rcount,staff;
+    private int Scount,Tscount,totallStaff;
 
 
     @Override
@@ -123,7 +124,7 @@ public class NavigationPage implements Initializable {
         }
         transportCount.setText(Tcount);
         garageCount.setText(Gcount);
-        staffCount.setText(Scount);
+        staffCount.setText(staff);
         reservedCount.setText(Rcount);
 
 
@@ -318,14 +319,18 @@ public class NavigationPage implements Initializable {
         querycount = "select count(*) from  Garage_staff";
         ResultSet st = statementcount.executeQuery(querycount);
         st.next();
-        Scount = st.getString(1);
+        Scount = st.getInt(1);
         System.out.println("Number of records " + Scount);
 
         querycount = "select count(*) from  Transport_staff";
         ResultSet ts = statementcount.executeQuery(querycount);
         ts.next();
-        Scount = ts.getString(1);
-        System.out.println("Number of records " + Scount);
+        Tscount = ts.getInt(1);
+        System.out.println("Number of records " + Tscount);
+
+        totallStaff = Scount+Tscount;
+        staff = Integer.toString(totallStaff);
+        System.out.println("Number of records " + totallStaff);
 
         querycount = "select count(*) from  Reserve";
         ResultSet rc = statementcount.executeQuery(querycount);

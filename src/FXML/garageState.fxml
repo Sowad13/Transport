@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="623.0" prefWidth="1222.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GarageState">
+   <children>
+      <HBox alignment="CENTER_RIGHT" layoutX="4.0" layoutY="14.0" prefHeight="44.0" prefWidth="1215.0" spacing="10.0">
+         <children>
+            <ImageView fx:id="searchButton" fitHeight="29.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/search.png" />
+               </image>
+            </ImageView>
+            <TextField prefHeight="31.0" prefWidth="504.0" style="-fx-background-radius: 2em;" stylesheets="@../style.css">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <JFXButton buttonType="RAISED" prefHeight="35.0" prefWidth="320.0" style="-fx-background-color: #b4aee8;" text="EDIT" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/editing.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" prefHeight="35.0" prefWidth="304.0" style="-fx-background-color: #b4aee8;" text="ADD" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </HBox>
+      <VBox layoutY="73.0" prefHeight="550.0" prefWidth="1223.0">
+         <children>
+            <TableView fx:id="garageTableShow" prefHeight="573.0" prefWidth="1207.0" stylesheets="@../style.css">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <columns>
+                  <TableColumn fx:id="garage_id" prefWidth="75.0" text="Garage ID" />
+                  <TableColumn fx:id="gLocation" prefWidth="75.0" text="Garage Location" />
+                  <TableColumn fx:id="staff_id" prefWidth="59.0" text="Staff ID" />
+                  <TableColumn fx:id="name_staff" minWidth="1.0" prefWidth="91.0" text="Staff Name" />
+                  <TableColumn fx:id="tansportPlate" prefWidth="75.0" text="Transports In Garage" />
+                  <TableColumn fx:id="parking" prefWidth="75.0" text="Available Parking Space" />
+               </columns>
+            </TableView>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

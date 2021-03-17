@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="show_info" prefHeight="641.0" prefWidth="1223.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainDashboard">
+<AnchorPane fx:id="show_info" prefHeight="641.0" prefWidth="1223.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainDashboard">
    <children>
       <VBox prefHeight="641.0" prefWidth="1223.0" spacing="40.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -18,7 +18,10 @@
                         <Font name="System Bold" size="15.0" />
                      </font></JFXButton>
                   <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
-                  <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
+                  <JFXButton fx:id="garage_state" buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" text="Garage Status" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></JFXButton>
                </children>
                <VBox.margin>
                   <Insets top="100.0" />
