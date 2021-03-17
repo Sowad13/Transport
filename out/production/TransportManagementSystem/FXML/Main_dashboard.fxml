@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="641.0" prefWidth="1223.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainDashboard">
+<AnchorPane fx:id="show_info" prefHeight="641.0" prefWidth="1223.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainDashboard">
    <children>
       <VBox prefHeight="641.0" prefWidth="1223.0" spacing="40.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -32,7 +32,10 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="120.0" prefWidth="735.0" spacing="40.0">
                <children>
-                  <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
+                  <JFXButton fx:id="routine_btn" buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" text="Travel Routine" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font></JFXButton>
                   <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
                   <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
                </children>
