@@ -31,7 +31,7 @@
                <children>
                   <JFXButton fx:id="routine_btn" buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" text="Travel Routine" textFill="WHITE">
                      <font>
-                        <Font name="System Bold Italic" size="15.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font></JFXButton>
                   <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
                   <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />

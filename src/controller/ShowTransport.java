@@ -140,6 +140,7 @@ public class ShowTransport implements Initializable {
             System.out.println(rs.getString("Servicing_query"));
             System.out.println(rs.getString("Capacity"));
             System.out.println(rs.getString("Transport_condition"));
+
             TransportObservableList.add(new Transport(rs.getString("Transport_plate_no"), rs.getString("class_name"),
                     rs.getInt("Garage_id"), rs.getBoolean("Insurance"), rs.getInt("Servicing_cost"),
                     rs.getBoolean("Servicing_query"), rs.getInt("Capacity"),rs.getString("Transport_condition")) {

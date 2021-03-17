@@ -5,18 +5,18 @@ public class garageJoin {
     int garageId;
     String garageLocation;
     int garageStaff;
-    String staff;
+    String staffName;
     String transportPlate;
    // int parkingSpace;
 
     public garageJoin() {
     }
 
-    public garageJoin(int garageId, String garageLocation, int garageStaff, String staff, String transportPlate) {
+    public garageJoin(int garageId, String garageLocation, int garageStaff, String staffName, String transportPlate) {
         this.garageId = garageId;
         this.garageLocation = garageLocation;
         this.garageStaff = garageStaff;
-        this.staff = staff;
+        this.staffName = staffName;
         this.transportPlate = transportPlate;
         //this.parkingSpace = parkingSpace;
     }
@@ -45,12 +45,12 @@ public class garageJoin {
         this.garageStaff = garageStaff;
     }
 
-    public String getstaff() {
-        return staff;
+    public String getStaffName() {
+        return staffName;
     }
 
-    public void setstaff(String staff) {
-        this.staff = staff;
+    public void setStaffName(String staffName) {
+        this.staffName = staffName;
     }
 
     public String getTransportPlate() {

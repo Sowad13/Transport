@@ -68,7 +68,7 @@ public class GarageState implements Initializable {
         garage_id.setCellValueFactory(new PropertyValueFactory<>("garageId"));
         gLocation.setCellValueFactory(new PropertyValueFactory<>("garageLocation"));
         staff_id.setCellValueFactory(new PropertyValueFactory<>("garageStaff"));
-        name_staff.setCellValueFactory(new PropertyValueFactory<>("staff"));
+        name_staff.setCellValueFactory(new PropertyValueFactory<>("staffName"));
         tansportPlate.setCellValueFactory(new PropertyValueFactory<>("transportPlate"));
         parking.setCellValueFactory(new PropertyValueFactory<>("parkingSpace"));
 
