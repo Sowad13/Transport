@@ -36,8 +36,6 @@ public class ShowDriver implements Initializable {
     @FXML
     private TableColumn<?, ?> nid;
 
-    @FXML
-    private TableColumn<?, ?> Medical_insurance;
 
     @FXML
     private TableColumn<?, ?> Name;
@@ -119,7 +117,6 @@ public class ShowDriver implements Initializable {
 
         staff_Id.setCellValueFactory(new PropertyValueFactory<>("staffid"));
         nid.setCellValueFactory(new PropertyValueFactory<>("nid"));
-        Medical_insurance.setCellValueFactory(new PropertyValueFactory<>("insurance"));
         Name.setCellValueFactory(new PropertyValueFactory<>("name"));
         phone_number.setCellValueFactory(new PropertyValueFactory<>("phone"));
         transport_plate.setCellValueFactory(new PropertyValueFactory<>("transport_plate"));
@@ -145,7 +142,7 @@ public class ShowDriver implements Initializable {
             System.out.println(rs.getString("Transport_plate_no"));
 
             TransportObservableList.add(new Driver(rs.getInt("Staff_id"), rs.getInt("NID"),
-                    rs.getString("Driver_license_number"), rs.getBoolean("Medical_Insurance"), rs.getString("Name"),
+                    rs.getString("Driver_license_number"), rs.getString("Name"),
                     rs.getString("Phone_number"), rs.getString("Transport_plate_no")) {
             });
 

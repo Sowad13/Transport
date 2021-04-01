@@ -33,16 +33,8 @@ public class ShowTransport implements Initializable {
     private TableColumn<?, ?> table_ClassName;
 
     @FXML
-    private TableColumn<?, ?> table_GarageID;
+    private TableColumn<?, ?> garage_id;
 
-    @FXML
-    private TableColumn<?, ?> table_Insurance;
-
-    @FXML
-    private TableColumn<?, ?> table_Servicing_Cost;
-
-    @FXML
-    private TableColumn<?, ?> table_Servicing_Query;
 
     @FXML
     private TableColumn<?, ?> table_Capacity;
@@ -117,10 +109,7 @@ public class ShowTransport implements Initializable {
     private void initTable() {
         table_Transport_Plate_No.setCellValueFactory(new PropertyValueFactory<>("transportPlateNo"));
         table_ClassName.setCellValueFactory(new PropertyValueFactory<>("className"));
-        table_GarageID.setCellValueFactory(new PropertyValueFactory<>("garageId"));
-        table_Insurance.setCellValueFactory(new PropertyValueFactory<>("insurance"));
-        table_Servicing_Cost.setCellValueFactory(new PropertyValueFactory<>("servicingCost"));
-        table_Servicing_Query.setCellValueFactory(new PropertyValueFactory<>("servicingQuery"));
+        garage_id.setCellValueFactory(new PropertyValueFactory<>("garageId"));
         table_Capacity.setCellValueFactory(new PropertyValueFactory<>("capacity"));
         table_TransportCondition.setCellValueFactory(new PropertyValueFactory<>("transportCondition"));
     }
@@ -134,16 +123,14 @@ public class ShowTransport implements Initializable {
         while(rs.next()) {
             System.out.println(rs.getString("class_name"));
             System.out.println(rs.getString("Transport_plate_no"));
-            System.out.println(rs.getString("Garage_id"));
             System.out.println(rs.getString("Insurance"));
-            System.out.println(rs.getString("Servicing_cost"));
+            System.out.println(rs.getString("Garage_id"));
             System.out.println(rs.getString("Servicing_query"));
             System.out.println(rs.getString("Capacity"));
             System.out.println(rs.getString("Transport_condition"));
 
             TransportObservableList.add(new Transport(rs.getString("Transport_plate_no"), rs.getString("class_name"),
-                    rs.getInt("Garage_id"), rs.getBoolean("Insurance"), rs.getInt("Servicing_cost"),
-                    rs.getBoolean("Servicing_query"), rs.getInt("Capacity"),rs.getString("Transport_condition")) {
+                     rs.getInt("Garage_id"), rs.getInt("Capacity"),rs.getString("Transport_condition")) {
             });
         }
     }

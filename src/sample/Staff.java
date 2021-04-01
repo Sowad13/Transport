@@ -7,18 +7,18 @@ public class Staff {
     int nidStaff;
     String phoneStaff;
     int garageNo;
-    Boolean mediinsueranceStaff;
+
 
     public Staff() {
     }
 
-    public Staff(int idStaff, String nameStaff, int nidStaff, String phoneStaff, int garageNo, Boolean mediinsueranceStaff) {
+    public Staff(int idStaff, String nameStaff, int nidStaff, String phoneStaff, int garageNo) {
         this.idStaff = idStaff;
         this.nameStaff = nameStaff;
         this.nidStaff = nidStaff;
         this.phoneStaff = phoneStaff;
         this.garageNo = garageNo;
-        this.mediinsueranceStaff = mediinsueranceStaff;
+
     }
 
     public int getIdStaff() {
@@ -61,11 +61,4 @@ public class Staff {
         this.garageNo = garageNo;
     }
 
-    public Boolean getMediinsueranceStaff() {
-        return mediinsueranceStaff;
-    }
-
-    public void setMediinsueranceStaff(Boolean mediinsueranceStaff) {
-        this.mediinsueranceStaff = mediinsueranceStaff;
-    }
 }
