@@ -27,11 +27,21 @@ public class MainDashboard implements Initializable {
     @FXML
     private JFXButton routine_btn;
 
+    @FXML
+    private JFXButton transport_state;
+
+    @FXML
+    private JFXButton staff_insurance;
+
 
 
 
     @FXML
     private JFXButton available_transport;
+
+    @FXML
+    private JFXButton reserve;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -79,6 +89,61 @@ public class MainDashboard implements Initializable {
                show_info.getChildren().setAll(fxml);
             }
             catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+
+
+
+        reserve.setOnAction(actionEvent ->{
+
+
+            try {
+                Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/ReserveTransport.fxml"));
+
+                show_info.getChildren().removeAll();
+                show_info.getChildren().setAll(fxml);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+
+
+
+
+
+        transport_state.setOnAction(actionEvent ->{
+
+
+            try {
+                Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/State_Transport.fxml"));
+
+                show_info.getChildren().removeAll();
+                show_info.getChildren().setAll(fxml);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+
+
+        staff_insurance.setOnAction(actionEvent ->{
+
+
+            try {
+                Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/Staff_Insurance.fxml"));
+
+                show_info.getChildren().removeAll();
+                show_info.getChildren().setAll(fxml);
+
+            } catch (IOException e) {
                 e.printStackTrace();
             }
 

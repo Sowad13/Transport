@@ -61,10 +61,7 @@
                <columns>
                   <TableColumn fx:id="table_Transport_Plate_No" prefWidth="59.0" text="Transport plate No" />
                   <TableColumn fx:id="table_ClassName" minWidth="1.0" prefWidth="91.0" text="Class Name" />
-                  <TableColumn fx:id="table_GarageID" prefWidth="75.0" text="Garage ID" />
-                  <TableColumn fx:id="table_Insurance" prefWidth="75.0" text="Insurance" />
-                  <TableColumn fx:id="table_Servicing_Cost" prefWidth="75.0" text="Servicing Cost" />
-                  <TableColumn fx:id="table_Servicing_Query" prefWidth="75.0" text="Servicing Query" />
+                  <TableColumn fx:id="garage_id" prefWidth="75.0" text="Garage" />
                   <TableColumn fx:id="table_Capacity" prefWidth="75.0" text="Capacity" />
                   <TableColumn fx:id="table_TransportCondition" prefWidth="75.0" text="TransportCondition" />
                </columns>

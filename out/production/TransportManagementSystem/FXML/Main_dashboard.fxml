@@ -17,7 +17,14 @@
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font></JFXButton>
-                  <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
+                  <JFXButton fx:id="reserve" buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" text="Reserve" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></JFXButton>
+                  <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></JFXButton>
                   <JFXButton fx:id="garage_state" buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" text="Garage Status" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
@@ -33,8 +40,14 @@
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font></JFXButton>
-                  <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
-                  <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
+                  <JFXButton fx:id="staff_insurance" buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" text="Staff Insurance" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="transport_state" buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" text="Transport State" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></JFXButton>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="122.0" prefWidth="728.0" spacing="40.0">
