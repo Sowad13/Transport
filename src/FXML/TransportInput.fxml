@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.control.ButtonType?>
 <?import javafx.scene.control.DialogPane?>
 <?import javafx.scene.control.Label?>
@@ -32,31 +33,16 @@
                   <Font name="Bell MT Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="Transport_Condition" alignment="CENTER" prefHeight="109.0" prefWidth="294.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </TextField>
             <Label alignment="CENTER" prefHeight="126.0" prefWidth="295.0" text="Class Name" textFill="WHITE" GridPane.rowIndex="1">
                <font>
                   <Font name="Bell MT Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="Class_Name" alignment="CENTER" prefHeight="42.0" prefWidth="272.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </TextField>
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="111.0" prefWidth="314.0" style="-fx-background-color: #393e46;" text="Garage Id" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="2">
                <font>
                   <Font name="Bell MT Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="Garage_Id" alignment="CENTER" prefHeight="42.0" prefWidth="272.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </TextField>
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="111.0" prefWidth="314.0" style="-fx-background-color: #393e46;" text="Servicing query" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="5">
                <font>
                   <Font name="Bell MT Bold" size="15.0" />
@@ -72,17 +58,12 @@
                   <Font name="Bell MT Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="Servicing_query" alignment="CENTER" prefHeight="42.0" prefWidth="287.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </TextField>
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="111.0" prefWidth="314.0" style="-fx-background-color: #393e46;" text="Insurance" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="3">
                <font>
                   <Font name="Bell MT Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="Servicing_Cost" alignment="CENTER" prefHeight="42.0" prefWidth="261.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <TextField fx:id="Servicing_Cost" alignment="CENTER" prefHeight="42.0" prefWidth="261.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font size="18.0" />
                </font>
@@ -92,11 +73,6 @@
                   <Font name="Bell MT Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="Insurance" alignment="CENTER" prefHeight="42.0" prefWidth="267.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </TextField>
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="111.0" prefWidth="314.0" style="-fx-background-color: #393e46;" text="Transport Condition" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="7">
                <font>
                   <Font name="Bell MT Bold" size="15.0" />
@@ -107,6 +83,11 @@
                   <Font size="18.0" />
                </font>
             </TextField>
+            <JFXComboBox fx:id="classname" prefHeight="47.0" prefWidth="295.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <JFXComboBox fx:id="Garage_id" prefHeight="48.0" prefWidth="295.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <JFXComboBox fx:id="Insurance" prefHeight="57.0" prefWidth="295.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <JFXComboBox fx:id="Servicing_query" prefHeight="88.0" prefWidth="295.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <JFXComboBox fx:id="Transport_Condition" prefHeight="71.0" prefWidth="295.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
          </children>
       </GridPane>
    </graphic>
