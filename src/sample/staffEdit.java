@@ -1,24 +1,23 @@
 package sample;
 
-public class Staff {
-
-    int idStaff;
-    String nameStaff;
-    //int nidStaff;
-    String phoneStaff;
-    int garageNo;
+public class staffEdit {
 
 
-    public Staff() {
+        int idStaff;
+        String nameStaff;
+        Boolean medins;
+        String phoneStaff;
+        int garageNo;
+
+    public staffEdit() {
     }
 
-    public Staff(int idStaff, String nameStaff,  String phoneStaff, int garageNo) {
+    public staffEdit(int idStaff, String nameStaff, Boolean medins, String phoneStaff, int garageNo) {
         this.idStaff = idStaff;
         this.nameStaff = nameStaff;
-        //this.nidStaff = nidStaff;
+        this.medins = medins;
         this.phoneStaff = phoneStaff;
         this.garageNo = garageNo;
-
     }
 
     public int getIdStaff() {
@@ -37,8 +36,13 @@ public class Staff {
         this.nameStaff = nameStaff;
     }
 
+    public Boolean getMedins() {
+        return medins;
+    }
 
-
+    public void setMedins(Boolean medins) {
+        this.medins = medins;
+    }
 
     public String getPhoneStaff() {
         return phoneStaff;
@@ -55,5 +59,4 @@ public class Staff {
     public void setGarageNo(int garageNo) {
         this.garageNo = garageNo;
     }
-
 }

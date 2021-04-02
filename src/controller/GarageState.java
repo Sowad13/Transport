@@ -1,21 +1,26 @@
 package controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.Parent;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import sample.ConnectMSSQL;
 import sample.Staff;
 import sample.garageJoin;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class GarageState implements Initializable {
@@ -44,6 +49,12 @@ public class GarageState implements Initializable {
     @FXML
     private TableColumn<?, ?> parking;
 
+    @FXML
+    private JFXButton editButton;
+
+    @FXML
+    private AnchorPane showInfo;
+
     private String query;
 
     private ObservableList<garageJoin> garageJoinObservableList;
@@ -62,6 +73,10 @@ public class GarageState implements Initializable {
 
         garageTableShow.setItems(garageJoinObservableList);
 
+
+
+
+
     }
 
     private void initTable() {
@@ -72,6 +87,8 @@ public class GarageState implements Initializable {
         tansportPlate.setCellValueFactory(new PropertyValueFactory<>("transportPlate"));
         parking.setCellValueFactory(new PropertyValueFactory<>("parkingSpace"));
 
+
+
     }
 
     private void loadFromDatabase() throws SQLException, ClassNotFoundException {
@@ -79,7 +96,6 @@ public class GarageState implements Initializable {
         Statement statement = Database.connectDB().createStatement();
         query = " SELECT Garage.Garage_id,Garage.Location,Garage_staff.Staff_id,Garage_staff.Name,Transport.Transport_plate_no FROM Garage JOIN Garage_staff ON Garage.Garage_id = Garage_staff.Garage_id JOIN Transport ON Transport.Garage_id = Garage.Garage_id;";
         ResultSet rs = statement.executeQuery(query);
-
 
         while(rs.next()) {
             System.out.println(rs.getString("Garage_id"));
@@ -93,6 +109,7 @@ public class GarageState implements Initializable {
                     rs.getInt("Staff_id"), rs.getString("Name"), rs.getString("Transport_plate_no")){
             });
         }
+
     }
 
 }

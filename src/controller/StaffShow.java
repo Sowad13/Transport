@@ -1,15 +1,21 @@
 package controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import sample.ConnectMSSQL;
 import sample.Staff;
 import sample.Transport;
+import sample.garageJoin;
 
 import java.io.IOException;
 import java.net.URL;
@@ -41,6 +47,16 @@ public class StaffShow implements Initializable {
 
     @FXML
     private TableColumn<?, ?> staff_id;
+
+    @FXML
+    private JFXButton editButton;
+
+    @FXML
+    private TextField search;
+
+    @FXML
+    private AnchorPane show_info;
+
 
     private String query;
 
@@ -92,15 +108,53 @@ public class StaffShow implements Initializable {
 
         });*/
 
+        editButton.setOnAction(actionEvent ->{
+
+
+            try {
+                Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/updateStaff.fxml"));
+
+                show_info.getChildren().removeAll();
+                show_info.getChildren().setAll(fxml);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+
 
     }
 
     private void initTable() {
         staff_id.setCellValueFactory(new  PropertyValueFactory<>("idStaff"));
         name_staff.setCellValueFactory(new PropertyValueFactory<>("nameStaff"));
-        nid_staff.setCellValueFactory(new PropertyValueFactory<>("nidStaff"));
+        //nid_staff.setCellValueFactory(new PropertyValueFactory<>("nidStaff"));
         Phone_number.setCellValueFactory(new PropertyValueFactory<>("phoneStaff"));
         garage_id.setCellValueFactory(new PropertyValueFactory<>("garageNo"));
+
+
+        staffTableShow.setOnMouseClicked(event -> {
+
+            try {
+                Staff staff = (Staff) staffTableShow.getSelectionModel().getSelectedItem();
+
+                String update = "SELECT * FROM Garage_staff where Staff_id = ?";
+                ConnectMSSQL Database = new ConnectMSSQL();
+                PreparedStatement preparedstatement = Database.connectDB().prepareStatement(update);
+                preparedstatement.setInt(1,staff.getIdStaff());
+                ResultSet up = preparedstatement.executeQuery();
+
+                while (up.next()){
+                    search.setText(up.getString("Staff_id"));
+                }
+
+
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        });
 
     }
 
@@ -120,20 +174,17 @@ public class StaffShow implements Initializable {
             System.out.println(rs.getString("Medical_Insurance"));
 
             StaffObservableList.add(new Staff(rs.getInt("Staff_id"), rs.getString("Name"),
-                    rs.getInt("NID"), rs.getString("Phone_number"), rs.getInt("Garage_id")){
+                     rs.getString("Phone_number"), rs.getInt("Garage_id")){
             });
         }
     }
 
 
-    /*void save_Data(TransportInput transportInput ) throws SQLException {
+    void save_Data(TransportInput transportInput ) throws SQLException {
 
         ConnectMSSQL Database = new ConnectMSSQL();
 
-        PreparedStatement statement  =  Database.connectDB().prepareStatement("INSERT INTO Transport VALUES ('"+transportInput.getTransport_plate_No()+"','
-        "+transportInput.getClass_Name()+"','"+transportInput.getGarage_Id()+"','"+transportInput.getInsurance()+"','"+transportInput.getServicing_Cost()+"
-        ','"+transportInput.getServicing_query()+"','"+transportInput.getCapacity()+"','"+transportInput.getTransport_Condition()+"')");
+        PreparedStatement statement = Database.connectDB().prepareStatement("INSERT INTO Transport VALUES ('" + transportInput.getTransport_plate_No() + "','" + transportInput.getClass_Name() + "','" + transportInput.getGarage_Id() + "','" + transportInput.getInsurance() + "','" + transportInput.getServicing_Cost() + "','" + transportInput.getServicing_query() + "','" + transportInput.getCapacity() + "','" + transportInput.getTransport_Condition() + "')");
         statement.executeQuery();
-
-    }*/
+    }
 }

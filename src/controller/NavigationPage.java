@@ -62,6 +62,10 @@ public class NavigationPage implements Initializable {
     @FXML
     private JFXButton dash_bord_btn;
 
+    @FXML
+    private JFXButton logoutButton;
+
+
 
     @FXML
     private Label menu;
@@ -251,6 +255,8 @@ public class NavigationPage implements Initializable {
                 menuback.setVisible(false);
             });
         });*/
+
+
 
 
         transport_id.setOnAction(actionEvent ->{

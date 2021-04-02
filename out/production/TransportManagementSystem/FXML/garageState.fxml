@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="623.0" prefWidth="1222.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GarageState">
+<AnchorPane fx:id="showInfo" prefHeight="623.0" prefWidth="1222.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GarageState">
    <children>
       <HBox alignment="CENTER_RIGHT" layoutX="4.0" layoutY="14.0" prefHeight="44.0" prefWidth="1215.0" spacing="10.0">
          <children>
@@ -26,7 +26,7 @@
                   <Font size="15.0" />
                </font>
             </TextField>
-            <JFXButton buttonType="RAISED" prefHeight="35.0" prefWidth="320.0" style="-fx-background-color: #b4aee8;" text="EDIT" textFill="WHITE">
+            <JFXButton fx:id="editButton" buttonType="RAISED" prefHeight="35.0" prefWidth="320.0" style="-fx-background-color: #b4aee8;" text="EDIT" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
