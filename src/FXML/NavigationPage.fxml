@@ -10,187 +10,208 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NavigationPage">
-   <children>
-      <AnchorPane layoutX="1.0" prefHeight="104.0" prefWidth="1282.0" style="-fx-background-color: #440a67;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <HBox alignment="CENTER" layoutX="259.0" layoutY="13.0" prefHeight="58.0" prefWidth="973.0" spacing="100.0" style="-fx-background-color: #440a67;" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="15.0">
-               <children>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <Label fx:id="transportCount" text="22000" textFill="#2a73ff">
-                           <font>
-                              <Font name="System Bold" size="26.0" />
-                           </font>
-                        </Label>
-                        <Label text="Total Transports" textFill="#e7e5e5" />
-                     </children>
-                  </VBox>
-                  <VBox alignment="CENTER" prefHeight="58.0" prefWidth="144.0">
-                     <children>
-                        <Label fx:id="garageCount" text="1500" textFill="#26bfbc">
-                           <font>
-                              <Font name="System Bold" size="26.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="17.0" prefWidth="138.0" text="Garage Under Operation" textFill="#e7e5e5" />
-                     </children>
-                  </VBox>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <Label fx:id="staffCount" text="1000" textFill="#fa5f7e">
-                           <font>
-                              <Font name="System Bold" size="26.0" />
-                           </font>
-                        </Label>
-                        <Label text="Staff Working" textFill="#e7e5e5" />
-                     </children>
-                  </VBox>
-                  <VBox alignment="CENTER" prefHeight="58.0" prefWidth="130.0">
-                     <children>
-                        <Label fx:id="reservedCount" text="780" textFill="#de0000">
-                           <font>
-                              <Font name="System Bold" size="26.0" />
-                           </font>
-                        </Label>
-                        <Label text="Transports On Reserve " textFill="#e7e5e5" />
-                     </children>
-                  </VBox>
-                  <ImageView fx:id="refresh" fitHeight="25.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/refresh.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </HBox>
-            <Label fx:id="menu" alignment="CENTER" layoutX="28.0" layoutY="22.0" prefHeight="58.0" prefWidth="130.0" style="-fx-background-color: #440a67; -fx-background-radius: 2em;" text="Menu" textFill="WHITE" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="10.0">
-               <font>
-                  <Font name="System Bold Italic" size="18.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/menu-4-64.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="show_info" layoutX="61.0" layoutY="101.0" prefHeight="623.0" prefWidth="1222.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="101.0" />
-      <AnchorPane fx:id="paneOne" opacity="0.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <AnchorPane fx:id="iconbar" layoutX="10.0" layoutY="10.0" prefHeight="640.0" prefWidth="60.0" style="-fx-background-color: #b300b3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <VBox alignment="TOP_CENTER" layoutY="47.0" prefHeight="594.0" prefWidth="60.0" spacing="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="130.0">
-               <children>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/dashboard.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/bus.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/seatbelt.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/workers.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/navigation.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/setting.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/logout.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </VBox>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="paneTwo" layoutX="60.0" layoutY="80.0" prefHeight="651.0" prefWidth="250.0" style="-fx-background-color: #93329E;" styleClass="sliderItem" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="972.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <VBox layoutY="47.0" prefHeight="594.0" prefWidth="250.0" spacing="10.0" AnchorPane.topAnchor="120.0">
-               <children>
-                  <JFXButton fx:id="dashboardButton" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Dashboard" textFill="WHITE">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NavigationPage">
+   <AnchorPane layoutX="1.0" prefHeight="104.0" prefWidth="1282.0" style="-fx-background-color: #440a67;"
+               AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+         <HBox alignment="CENTER" layoutX="259.0" layoutY="13.0" prefHeight="58.0" prefWidth="973.0" spacing="100.0"
+               style="-fx-background-color: #440a67;" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="50.0"
+               AnchorPane.topAnchor="15.0">
+            <children>
+               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                     <Label fx:id="transportCount" text="22000" textFill="#2a73ff">
+                        <font>
+                           <Font name="System Bold" size="26.0"/>
+                        </font>
+                     </Label>
+                     <Label text="Total Transports" textFill="#e7e5e5"/>
+                  </children>
+               </VBox>
+               <VBox alignment="CENTER" prefHeight="58.0" prefWidth="144.0">
+                  <children>
+                     <Label fx:id="garageCount" text="1500" textFill="#26bfbc">
+                        <font>
+                           <Font name="System Bold" size="26.0"/>
+                        </font>
+                     </Label>
+                     <Label prefHeight="17.0" prefWidth="138.0" text="Garage Under Operation" textFill="#e7e5e5"/>
+                  </children>
+               </VBox>
+               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                     <Label fx:id="staffCount" text="1000" textFill="#fa5f7e">
+                        <font>
+                           <Font name="System Bold" size="26.0"/>
+                        </font>
+                     </Label>
+                     <Label text="Staff Working" textFill="#e7e5e5"/>
+                  </children>
+               </VBox>
+               <VBox alignment="CENTER" prefHeight="58.0" prefWidth="130.0">
+                  <Label fx:id="reservedCount" text="780" textFill="#de0000">
                      <font>
-                        <Font name="System Bold" size="15.0" />
+                        <Font name="System Bold" size="26.0"/>
                      </font>
-                     <padding>
-                        <Insets left="20.0" />
-                     </padding>
-                  </JFXButton>
-                  <JFXButton fx:id="transport_id" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Transport" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                     <padding>
-                        <Insets left="20.0" />
-                     </padding>
-                  </JFXButton>
-                  <JFXButton fx:id="driver_id" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Driver" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                     <padding>
-                        <Insets left="20.0" />
-                     </padding>
-                  </JFXButton>
-                  <JFXButton fx:id="staffID" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Staff" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                     <padding>
-                        <Insets left="20.0" />
-                     </padding>
-                  </JFXButton>
-                  <JFXButton fx:id="route_id" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Route" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                     <padding>
-                        <Insets left="20.0" />
-                     </padding>
-                  </JFXButton>
-                  <JFXButton fx:id="settings" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Settings" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                     <padding>
-                        <Insets left="20.0" />
-                     </padding>
-                  </JFXButton>
-                  <JFXButton fx:id="logout" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Logout" textFill="WHITE">
-                  <JFXButton fx:id="logoutButton" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Logout" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                     <padding>
-                        <Insets left="20.0" />
-                     </padding>
-                  </JFXButton>
-               </children>
-            </VBox>
-            <Label alignment="CENTER" layoutX="24.0" layoutY="32.0" prefHeight="38.0" prefWidth="202.0" text="Jaanbahon" textFill="WHITE">
-               <font>
-                  <Font name="Stencil" size="32.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-   </children>
+                  </Label>
+                  <Label text="Transports On Reserve " textFill="#e7e5e5"/>
+               </VBox>
+               <ImageView fx:id="refresh" fitHeight="25.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../Images/refresh.png"/>
+                  </image>
+               </ImageView>
+            </children>
+         </HBox>
+         <Label fx:id="menu" alignment="CENTER" layoutX="28.0" layoutY="22.0" prefHeight="58.0" prefWidth="130.0"
+                style="-fx-background-color: #440a67; -fx-background-radius: 2em;" text="Menu" textFill="WHITE"
+                AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="10.0">
+            <font>
+               <Font name="System Bold Italic" size="18.0"/>
+            </font>
+            <graphic>
+               <ImageView fitHeight="30.0" fitWidth="30.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true"
+                          preserveRatio="true">
+                  <image>
+                     <Image url="@../Images/menu-4-64.png"/>
+                  </image>
+               </ImageView>
+            </graphic>
+         </Label>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="show_info" layoutX="61.0" layoutY="101.0" prefHeight="623.0" prefWidth="1222.0"
+               style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="60.0"
+               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="101.0"/>
+   <AnchorPane fx:id="paneOne" opacity="0.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: black;"
+               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+               AnchorPane.topAnchor="0.0"/>
+   <AnchorPane fx:id="iconbar" layoutX="10.0" layoutY="10.0" prefHeight="640.0" prefWidth="60.0"
+               style="-fx-background-color: #b300b3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+               AnchorPane.topAnchor="0.0">
+      <children>
+         <VBox alignment="TOP_CENTER" layoutY="47.0" prefHeight="594.0" prefWidth="60.0" spacing="30.0"
+               AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="130.0">
+            <children>
+               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../Images/dashboard.png"/>
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../Images/bus.png"/>
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../Images/seatbelt.png"/>
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../Images/workers.png"/>
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../Images/navigation.png"/>
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../Images/setting.png"/>
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../Images/logout.png"/>
+                  </image>
+               </ImageView>
+            </children>
+         </VBox>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="paneTwo" layoutX="60.0" layoutY="80.0" prefHeight="651.0" prefWidth="250.0"
+               style="-fx-background-color: #93329E;" styleClass="sliderItem" AnchorPane.bottomAnchor="0.0"
+               AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="972.0" AnchorPane.topAnchor="0.0">
+      <children>
+         <VBox layoutY="47.0" prefHeight="594.0" prefWidth="250.0" spacing="10.0" AnchorPane.topAnchor="120.0">
+            <children>
+               <JFXButton fx:id="dashboardButton" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0"
+                          styleClass="sliderItem" text="Dashboard" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="15.0"/>
+                  </font>
+                  <padding>
+                     <Insets left="20.0"/>
+                  </padding>
+               </JFXButton>
+               <JFXButton fx:id="transport_id" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0"
+                          styleClass="sliderItem" text="Transport" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="15.0"/>
+                  </font>
+                  <padding>
+                     <Insets left="20.0"/>
+                  </padding>
+               </JFXButton>
+               <JFXButton fx:id="driver_id" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0"
+                          styleClass="sliderItem" text="Driver" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="15.0"/>
+                  </font>
+                  <padding>
+                     <Insets left="20.0"/>
+                  </padding>
+               </JFXButton>
+               <JFXButton fx:id="staffID" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0"
+                          styleClass="sliderItem" text="Staff" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="15.0"/>
+                  </font>
+                  <padding>
+                     <Insets left="20.0"/>
+                  </padding>
+               </JFXButton>
+               <JFXButton fx:id="route_id" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0"
+                          styleClass="sliderItem" text="Route" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="15.0"/>
+                  </font>
+                  <padding>
+                     <Insets left="20.0"/>
+                  </padding>
+               </JFXButton>
+               <JFXButton fx:id="settings" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0"
+                          styleClass="sliderItem" text="Settings" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="15.0"/>
+                  </font>
+                  <padding>
+                     <Insets left="20.0"/>
+                  </padding>
+               </JFXButton>
+               <JFXButton fx:id="logout" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0"
+                          styleClass="sliderItem" text="Logout" textFill="WHITE"></JFXButton>
+               <JFXButton fx:id="logoutButton" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0"
+                          styleClass="sliderItem" text="Logout" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="15.0"/>
+                  </font>
+                  <padding>
+                     <Insets left="20.0"/>
+                  </padding>
+               </JFXButton>
+            </children>
+         </VBox>
+         <Label alignment="CENTER" layoutX="24.0" layoutY="32.0" prefHeight="38.0" prefWidth="202.0" text="Jaanbahon"
+                textFill="WHITE">
+            <font>
+               <Font name="Stencil" size="32.0"/>
+            </font>
+         </Label>
+      </children>
+   </AnchorPane>
 </AnchorPane>
