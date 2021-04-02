@@ -221,8 +221,8 @@ public class UpdateStaff implements Initializable
         while (rs.next()) {
 
             StaffObservableList.add(new Staff( rs.getInt("Staff_id"),(rs.getString("Name")),
-                    rs.getInt("NID"), rs.getString("Phone_number"), rs.getInt("Garage_id"),
-                    rs.getBoolean("Medical_Insurance")){
+                    rs.getInt("NID"), rs.getString("Phone_number"), rs.getInt("Garage_id"))
+                   {
             });
 
 
