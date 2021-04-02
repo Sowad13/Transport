@@ -21,10 +21,6 @@
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font></JFXButton>
-                  <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font></JFXButton>
                   <JFXButton fx:id="garage_state" buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" text="Garage Status" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />

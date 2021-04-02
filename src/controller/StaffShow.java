@@ -130,7 +130,7 @@ public class StaffShow implements Initializable {
     private void initTable() {
         staff_id.setCellValueFactory(new  PropertyValueFactory<>("idStaff"));
         name_staff.setCellValueFactory(new PropertyValueFactory<>("nameStaff"));
-        nid_staff.setCellValueFactory(new PropertyValueFactory<>("nidStaff"));
+        //nid_staff.setCellValueFactory(new PropertyValueFactory<>("nidStaff"));
         Phone_number.setCellValueFactory(new PropertyValueFactory<>("phoneStaff"));
         garage_id.setCellValueFactory(new PropertyValueFactory<>("garageNo"));
 
@@ -174,7 +174,7 @@ public class StaffShow implements Initializable {
             System.out.println(rs.getString("Medical_Insurance"));
 
             StaffObservableList.add(new Staff(rs.getInt("Staff_id"), rs.getString("Name"),
-                    rs.getInt("NID"), rs.getString("Phone_number"), rs.getInt("Garage_id")){
+                     rs.getString("Phone_number"), rs.getInt("Garage_id")){
             });
         }
     }

@@ -25,13 +25,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import sample.ConnectMSSQL;
 import sample.Staff;
+import sample.staffEdit;
 
 public class UpdateStaff implements Initializable
 {
 
 
     @FXML
-    private TableView<Staff> staffTableShow;
+    private TableView<staffEdit> staffTableShow;
 
     @FXML
     private TableColumn<?, ?> staff_id;
@@ -39,8 +40,6 @@ public class UpdateStaff implements Initializable
     @FXML
     private TableColumn<?, ?> name_staff;
 
-    @FXML
-    private TableColumn<?, ?> nid_staff;
 
     @FXML
     private TableColumn<?, ?> Phone_number;
@@ -94,7 +93,7 @@ public class UpdateStaff implements Initializable
 
     int staffId;
     String query,updateQuery;
-    private ObservableList<Staff> StaffObservableList;
+    private ObservableList<staffEdit> StaffObservableList;
     int index = -1;
 
 
@@ -116,7 +115,7 @@ public class UpdateStaff implements Initializable
 
 
             try {
-                Staff staff = (Staff) staffTableShow.getSelectionModel().getSelectedItem();
+                staffEdit staff = (staffEdit) staffTableShow.getSelectionModel().getSelectedItem();
 
                 updateQuery = "UPDATE Garage_staff SET Name='"+getNameField()+"',Phone_number='"+getPhnField()+"', Garage_id='"+getGarageField()+"',Medical_Insurance='"+getInsField()+"' where Staff_id = ? ";
                 ConnectMSSQL Database = new ConnectMSSQL();
@@ -143,7 +142,7 @@ public class UpdateStaff implements Initializable
 
             try {
 
-                Staff staff = (Staff) staffTableShow.getSelectionModel().getSelectedItem();
+                staffEdit staff = (staffEdit) staffTableShow.getSelectionModel().getSelectedItem();
 
                 updateQuery = "DELETE FROM Garage_staff where Staff_id = ?";
                 ConnectMSSQL Database = new ConnectMSSQL();
@@ -178,16 +177,16 @@ public class UpdateStaff implements Initializable
     private void initTable() {
         staff_id.setCellValueFactory(new PropertyValueFactory<>("idStaff"));
         name_staff.setCellValueFactory(new PropertyValueFactory<>("nameStaff"));
-        nid_staff.setCellValueFactory(new PropertyValueFactory<>("nidStaff"));
+       // nid_staff.setCellValueFactory(new PropertyValueFactory<>("nidStaff"));
         Phone_number.setCellValueFactory(new PropertyValueFactory<>("phoneStaff"));
         garage_id.setCellValueFactory(new PropertyValueFactory<>("garageNo"));
-        medical_insurance.setCellValueFactory(new PropertyValueFactory<>("mediinsueranceStaff"));
+       medical_insurance.setCellValueFactory(new PropertyValueFactory<>("medins"));
 
 
         staffTableShow.setOnMouseClicked(event -> {
 
             try {
-                Staff staff = (Staff) staffTableShow.getSelectionModel().getSelectedItem();
+                staffEdit staff = (staffEdit) staffTableShow.getSelectionModel().getSelectedItem();
 
                 String update = "SELECT * FROM Garage_staff where Staff_id = ?";
                 ConnectMSSQL Database = new ConnectMSSQL();
@@ -220,8 +219,8 @@ public class UpdateStaff implements Initializable
 
         while (rs.next()) {
 
-            StaffObservableList.add(new Staff( rs.getInt("Staff_id"),(rs.getString("Name")),
-                    rs.getInt("NID"), rs.getString("Phone_number"), rs.getInt("Garage_id"))
+            StaffObservableList.add(new staffEdit( rs.getInt("Staff_id"),(rs.getString("Name")),(rs.getBoolean("Medical_Insurance")),
+                     rs.getString("Phone_number"), rs.getInt("Garage_id"))
                    {
             });
 

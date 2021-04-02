@@ -24,7 +24,6 @@
                <columns>
                   <TableColumn fx:id="staff_id" prefWidth="59.0" text="Staff ID" />
                   <TableColumn fx:id="name_staff" minWidth="1.0" prefWidth="91.0" text="Name" />
-                  <TableColumn fx:id="nid_staff" prefWidth="75.0" text="NID" />
                   <TableColumn fx:id="Phone_number" prefWidth="75.0" text="Phone Number" />
                   <TableColumn fx:id="garage_id" prefWidth="75.0" text="Garage ID" />
                   <TableColumn fx:id="medical_insurance" prefWidth="75.0" text="Medical Insurance" />
