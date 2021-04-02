@@ -33,6 +33,9 @@ public class MainDashboard implements Initializable {
     @FXML
     private JFXButton staff_insurance;
 
+    @FXML
+    private JFXButton reserve_info;
+
 
 
 
@@ -139,6 +142,23 @@ public class MainDashboard implements Initializable {
 
             try {
                 Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/Staff_Insurance.fxml"));
+
+                show_info.getChildren().removeAll();
+                show_info.getChildren().setAll(fxml);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+
+
+        reserve_info.setOnAction(actionEvent ->{
+
+
+            try {
+                Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/Reserve_Transport.fxml"));
 
                 show_info.getChildren().removeAll();
                 show_info.getChildren().setAll(fxml);

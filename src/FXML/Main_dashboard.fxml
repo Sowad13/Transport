@@ -48,7 +48,10 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="122.0" prefWidth="728.0" spacing="40.0">
                <children>
-                  <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
+                  <JFXButton fx:id="reserve_info" buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" text="Reserve Info" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></JFXButton>
                   <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
                   <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
                </children>
