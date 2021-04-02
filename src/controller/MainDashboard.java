@@ -32,6 +32,10 @@ public class MainDashboard implements Initializable {
     @FXML
     private JFXButton available_transport;
 
+    @FXML
+    private JFXButton reserve;
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -78,6 +82,24 @@ public class MainDashboard implements Initializable {
                show_info.getChildren().setAll(fxml);
             }
             catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+
+
+
+        reserve.setOnAction(actionEvent ->{
+
+
+            try {
+                Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/ReserveTransport.fxml"));
+
+                show_info.getChildren().removeAll();
+                show_info.getChildren().setAll(fxml);
+
+            } catch (IOException e) {
                 e.printStackTrace();
             }
 

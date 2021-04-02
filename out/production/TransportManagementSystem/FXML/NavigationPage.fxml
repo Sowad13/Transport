@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NavigationPage">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NavigationPage">
    <children>
       <AnchorPane layoutX="1.0" prefHeight="104.0" prefWidth="1282.0" style="-fx-background-color: #440a67;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -100,12 +100,12 @@
                   </ImageView>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/setting.png" />
+                        <Image url="@../Images/navigation.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/navigation.png" />
+                        <Image url="@../Images/setting.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
@@ -153,7 +153,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Settings" textFill="WHITE">
+                  <JFXButton fx:id="route_id" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Route" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -161,7 +161,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton fx:id="route_id" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" text="Route" textFill="WHITE">
+                  <JFXButton alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Settings" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>

@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -15,6 +16,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -70,6 +72,11 @@ public class LoginPage implements Initializable {
 
                     Parent root = fxmlLoader.load();
                     NavigationPage navigationPage = fxmlLoader.getController();
+
+
+                    Stage st = (Stage) userName.getScene().getWindow();
+
+                    st.close();
 
                     Stage stage = new Stage();
                     stage.setScene(new Scene(root, 1280, 720));
