@@ -15,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import sample.ConnectMSSQL;
+import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 import java.net.URL;
@@ -86,6 +87,12 @@ public class NavigationPage implements Initializable {
     @FXML
     private JFXButton dashboardButton;
 
+    @FXML
+    private ImageView refresh;
+
+    @FXML
+    private JFXButton logout;
+
 
 
     private String querycount;
@@ -95,6 +102,32 @@ public class NavigationPage implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+
+
+        logout.setOnAction(actionEV->{
+            FXMLLoader fxmlLoader = new FXMLLoader();
+
+            fxmlLoader.setLocation(getClass().getResource("../FXML/loginPage.fxml"));
+
+            try {
+
+                Parent root = fxmlLoader.load();
+
+
+
+                Stage st = (Stage) show_info.getScene().getWindow();
+
+                st.close();
+
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root, 1280, 720));
+                stage.show();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
 
         dashboardButton.setOnAction(actionEvent ->{
 
@@ -307,6 +340,18 @@ public class NavigationPage implements Initializable {
 
         });
 
+        refresh.setOnMouseClicked(ck->{
+
+
+            try {
+                loadFromDatabase();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        });
+
     }
 
     private void loadFromDatabase() throws SQLException, ClassNotFoundException {
@@ -340,7 +385,7 @@ public class NavigationPage implements Initializable {
         staff = Integer.toString(totallStaff);
         System.out.println("Number of records " + totallStaff);
 
-        querycount = "select count(*) from  Reserve";
+        querycount = "select count (Reserve.Reserve_id) from Reserve inner join Gets on Reserve.Reserve_id  = Gets.Reserve_id";
         ResultSet rc = statementcount.executeQuery(querycount);
         rc.next();
         Rcount = rc.getString(1);

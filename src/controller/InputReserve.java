@@ -9,6 +9,9 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import com.jfoenix.controls.JFXButton;
 
 public class InputReserve implements Initializable {
@@ -36,7 +39,12 @@ public class InputReserve implements Initializable {
     public JFXButton cancle_btn;
 
     public String getRenter_number() {
-        return renter_number.getText();
+
+        if(validateMobo(renter_number.getText()))
+        {
+            return renter_number.getText();
+        }
+        return "-1";
     }
 
     public int getReserve_id() {
@@ -89,6 +97,22 @@ public class InputReserve implements Initializable {
     public String getReserve_date() {
         return reserve_date.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }
+
+    private boolean validateMobo(String mobo){
+
+        Pattern p =Pattern.compile("[0][1][1-9][0-9]{8}");
+        Matcher m =p.matcher(mobo);
+
+        if(m.find()&&m.group().equals(mobo))
+        {
+            return true;
+        }
+
+        return false;
+
+
+    }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
