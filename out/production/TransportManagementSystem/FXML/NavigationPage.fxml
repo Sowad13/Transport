@@ -56,6 +56,11 @@
                         <Label text="Transports On Reserve " textFill="#e7e5e5" />
                      </children>
                   </VBox>
+                  <ImageView fx:id="refresh" fitHeight="25.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/refresh.png" />
+                     </image>
+                  </ImageView>
                </children>
             </HBox>
             <Label fx:id="menu" alignment="CENTER" layoutX="28.0" layoutY="22.0" prefHeight="58.0" prefWidth="130.0" style="-fx-background-color: #440a67; -fx-background-radius: 2em;" text="Menu" textFill="WHITE" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="10.0">
@@ -169,7 +174,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Logout" textFill="WHITE">
+                  <JFXButton fx:id="logout" alignment="BASELINE_LEFT" prefHeight="50.0" prefWidth="250.0" styleClass="sliderItem" text="Logout" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
