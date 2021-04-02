@@ -63,7 +63,6 @@
          <columns>
             <TableColumn fx:id="staff_Id" prefWidth="59.0" text="Staff Id" />
             <TableColumn fx:id="nid" minWidth="1.0" prefWidth="91.0" text="NID" />
-            <TableColumn fx:id="Medical_insurance" prefWidth="75.0" text="Medical Insurance" />
             <TableColumn fx:id="Name" prefWidth="75.0" text="Name" />
                   <TableColumn fx:id="driver_license" prefWidth="75.0" text="Driver license" />
             <TableColumn fx:id="phone_number" prefWidth="75.0" text="Phone Number" />

@@ -7,28 +7,27 @@ public class Driver {
     String stafftype;
     int conductorid;
     String Driver_license;
-    boolean Insurance;
     String name;
     String phone;
     String Transport_plate;
 
-    public Driver(int staffid, int nid, String driver_license, boolean insurance, String name, String phone, String transport_plate) {
+    public Driver(int staffid, int nid, String driver_license, String name, String phone, String transport_plate) {
         this.staffid = staffid;
         this.nid = nid;
         Driver_license = driver_license;
-        Insurance = insurance;
+
         this.name = name;
         this.phone = phone;
         Transport_plate = transport_plate;
     }
 
-    public Driver(int staffid, int nid, String stafftype, int conductorid, String driver_license, boolean insurance, String name, String phone, String transport_plate) {
+    public Driver(int staffid, int nid, String stafftype, int conductorid, String driver_license, String name, String phone, String transport_plate) {
         this.staffid = staffid;
         this.nid = nid;
         this.stafftype = stafftype;
         this.conductorid = conductorid;
         Driver_license = driver_license;
-        Insurance = insurance;
+
         this.name = name;
         this.phone = phone;
         Transport_plate = transport_plate;
@@ -74,13 +73,6 @@ public class Driver {
         Driver_license = driver_license;
     }
 
-    public boolean isInsurance() {
-        return Insurance;
-    }
-
-    public void setInsurance(boolean insurance) {
-        Insurance = insurance;
-    }
 
     public String getName() {
         return name;

@@ -5,19 +5,13 @@ public class Transport {
     String transportPlateNo;
     String className;
     int garageId;
-    boolean insurance;
-    int servicingCost;
-    boolean servicingQuery;
     int capacity;
     String transportCondition;
 
-    public Transport(String transportPlateNo, String className, int garageId, boolean insurance, int servicingCost, boolean servicingQuery, int capacity, String transportCondition) {
+    public Transport(String transportPlateNo, String className, int garageId, int capacity, String transportCondition) {
         this.transportPlateNo = transportPlateNo;
         this.className = className;
         this.garageId = garageId;
-        this.insurance = insurance;
-        this.servicingCost = servicingCost;
-        this.servicingQuery = servicingQuery;
         this.capacity = capacity;
         this.transportCondition = transportCondition;
     }
@@ -45,32 +39,8 @@ public class Transport {
         return garageId;
     }
 
-    public void setGarageId(int garageId) {
-        this.garageId = garageId;
-    }
-
-    public boolean isInsurance() {
-        return insurance;
-    }
-
-    public void setInsurance(boolean insurance) {
-        this.insurance = insurance;
-    }
-
-    public int getServicingCost() {
-        return servicingCost;
-    }
-
-    public void setServicingCost(int servicingCost) {
-        this.servicingCost = servicingCost;
-    }
-
-    public boolean isServicingQuery() {
-        return servicingQuery;
-    }
-
-    public void setServicingQuery(boolean servicingQuery) {
-        this.servicingQuery = servicingQuery;
+    public void setGarageId(int servicingCost) {
+        this.garageId = servicingCost;
     }
 
     public int getCapacity() {

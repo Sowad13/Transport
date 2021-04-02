@@ -34,8 +34,6 @@ public class StaffShow implements Initializable {
     @FXML
     private TableColumn<?, ?> nid_staff;
 
-    @FXML
-    private TableColumn<?, ?> medical_insurance;
 
     @FXML
     private TableColumn<?, ?> name_staff;
@@ -103,7 +101,6 @@ public class StaffShow implements Initializable {
         nid_staff.setCellValueFactory(new PropertyValueFactory<>("nidStaff"));
         Phone_number.setCellValueFactory(new PropertyValueFactory<>("phoneStaff"));
         garage_id.setCellValueFactory(new PropertyValueFactory<>("garageNo"));
-        medical_insurance.setCellValueFactory(new PropertyValueFactory<>("mediinsueranceStaff"));
 
     }
 
@@ -123,8 +120,7 @@ public class StaffShow implements Initializable {
             System.out.println(rs.getString("Medical_Insurance"));
 
             StaffObservableList.add(new Staff(rs.getInt("Staff_id"), rs.getString("Name"),
-                    rs.getInt("NID"), rs.getString("Phone_number"), rs.getInt("Garage_id"),
-                    rs.getBoolean("Medical_Insurance")){
+                    rs.getInt("NID"), rs.getString("Phone_number"), rs.getInt("Garage_id")){
             });
         }
     }
