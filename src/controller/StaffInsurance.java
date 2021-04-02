@@ -1,11 +1,12 @@
 package controller;
 
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXRadioButton;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sample.ConnectMSSQL;
 import sample.InsuranceStaff;
@@ -42,19 +43,22 @@ public class StaffInsurance implements Initializable {
     private TableColumn<?, ?> phone;
 
     @FXML
-    private JFXRadioButton insurance_true;
-
-    @FXML
-    private JFXRadioButton insurance_false;
+    private ComboBox<String> insurance_state;
 
     private ObservableList<InsuranceStaff> InsuranceList;
 
-    String query;
+    private ObservableList<String> InsuranceStateList;
+
+    String query1;
+
+    String query2;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         InsuranceList = FXCollections.observableArrayList();
+        InsuranceStateList = FXCollections.observableArrayList("Insurance Done", "Insurance Not Done");
+
         initTable();
         try {
             loadFromDatabase();
@@ -63,15 +67,23 @@ public class StaffInsurance implements Initializable {
         }
 
         insurance_tableView.setItems(InsuranceList);
+        insurance_state.setItems(InsuranceStateList);
 
+
+        insurance_state.setOnAction(actionEvent ->{
+
+            doAction(insurance_state.getValue());
+
+        });
     }
+
+
 
     private void initTable() {
 
         staff_Id.setCellValueFactory(new PropertyValueFactory<>("staffId"));
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         nid.setCellValueFactory(new PropertyValueFactory<>("nid"));
-        garage_port.setCellValueFactory(new PropertyValueFactory<>("garageId"));
         phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
 
     }
@@ -80,69 +92,75 @@ public class StaffInsurance implements Initializable {
 
 
 
-        insurance_true.setOnAction(actionEvent ->{
-
-            query = "SELECT * FROM Garage_staff WHERE Medical_insurance='true'";
-            ConnectMSSQL Database = new ConnectMSSQL();
-            PreparedStatement statement = null;
-            try {
-                statement = Database.connectDB().prepareStatement(query);
-                ResultSet rs = statement.executeQuery();
-
-                while (rs.next()) {
-                    System.out.println(rs.getString("Transport_plate_no"));
-                    System.out.println(rs.getString("Travel_time"));
-                    System.out.println(rs.getString("Starting_point"));
-                    System.out.println(rs.getString("Destination"));
-                    System.out.println(rs.getString("Interval_point"));
-
-                    InsuranceList.add(new InsuranceStaff(rs.getInt("Staff_id"), rs.getString("Name"),
-                            rs.getString("NID"), rs.getString("Phone_number")) {
-                    });
-                }
-
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
-
-
-
-
-        });
-
-
-        insurance_false.setOnAction(actionEvent ->{
-
-            query = "SELECT * FROM Garage_staff WHERE Medical_insurance='false'";
-            ConnectMSSQL Database = new ConnectMSSQL();
-            PreparedStatement statement = null;
-            try {
-                statement = Database.connectDB().prepareStatement(query);
-                ResultSet rs = statement.executeQuery();
-
-                while (rs.next()) {
-                    System.out.println(rs.getString("Transport_plate_no"));
-                    System.out.println(rs.getString("Travel_time"));
-                    System.out.println(rs.getString("Starting_point"));
-                    System.out.println(rs.getString("Destination"));
-                    System.out.println(rs.getString("Interval_point"));
-
-                    InsuranceList.add(new InsuranceStaff(rs.getInt("Staff_id"), rs.getString("Name"),
-                            rs.getString("NID"), rs.getString("Phone_number")) {
-                    });
-                }
-
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
-
-
-
-
-        });
-
-
-
-
     }
+
+    private void doAction(String listItem) {
+        switch (listItem) {
+
+
+            case "Insurance Done":
+
+                InsuranceList.clear();
+
+                query1 = "SELECT * FROM Garage_staff WHERE Garage_staff.Medical_insurance='true'";
+                PreparedStatement statement1 = null;
+                try {
+                    ConnectMSSQL Database = new ConnectMSSQL();
+                    statement1 = Database.connectDB().prepareStatement(query1);
+                    ResultSet rs = statement1.executeQuery();
+
+                    while (rs.next()) {
+                    /*System.out.println(rs.getString("Transport_plate_no"));
+                    System.out.println(rs.getString("Travel_time"));
+                    System.out.println(rs.getString("Starting_point"));
+                    System.out.println(rs.getString("Destination"));
+                    System.out.println(rs.getString("Interval_point"));*/
+
+                        InsuranceList.add(new InsuranceStaff(rs.getInt("Staff_id"), rs.getString("Name"),
+                                rs.getString("NID"), rs.getString("Phone_number")) {
+                        });
+                    }
+
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+                break;
+
+
+            case "Insurance Not Done":
+
+
+                InsuranceList.clear();
+
+                query2 = "SELECT * FROM Garage_staff WHERE Garage_staff.Medical_insurance='false'";
+                try {
+                    ConnectMSSQL Database = new ConnectMSSQL();
+                    PreparedStatement statement2 = null;
+                    statement2 = Database.connectDB().prepareStatement(query2);
+                    ResultSet rs = statement2.executeQuery();
+
+                    while (rs.next()) {
+                /*System.out.println(rs.getString("Transport_plate_no"));
+                System.out.println(rs.getString("Travel_time"));
+                System.out.println(rs.getString("Starting_point"));
+                System.out.println(rs.getString("Destination"));
+                System.out.println(rs.getString("Interval_point"));*/
+
+                        InsuranceList.add(new InsuranceStaff(rs.getInt("Staff_id"), rs.getString("Name"),
+                                rs.getString("NID"), rs.getString("Phone_number")) {
+                        });
+                    }
+
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+                break;
+
+            default:
+                break;
+
+        }
+    };
+
 }
