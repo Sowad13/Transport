@@ -52,8 +52,6 @@
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font></JFXButton>
-                  <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
-                  <JFXButton buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" style="-fx-background-color: b4aee8;" />
                </children>
             </HBox>
          </children>
