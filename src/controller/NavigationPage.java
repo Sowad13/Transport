@@ -7,10 +7,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
 import javafx.fxml.FXML;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import sample.ConnectMSSQL;
 
@@ -58,6 +60,10 @@ public class NavigationPage implements Initializable {
 
     @FXML
     private JFXButton dash_bord_btn;
+
+    @FXML
+    private JFXButton logoutButton;
+
 
 
     @FXML
@@ -216,6 +222,8 @@ public class NavigationPage implements Initializable {
                 menuback.setVisible(false);
             });
         });*/
+
+
 
 
         transport_id.setOnAction(actionEvent ->{
