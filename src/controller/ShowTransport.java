@@ -5,8 +5,10 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import sample.AvailableTransport;
@@ -57,10 +59,14 @@ public class ShowTransport implements Initializable {
 
 
     @FXML
-    private JFXButton edit_btn;
+    private JFXButton editButton;
 
     @FXML
     private JFXButton add_btn;
+
+    @FXML
+    private AnchorPane show_info;
+
 
     private String query;
 
@@ -136,6 +142,22 @@ public class ShowTransport implements Initializable {
                 }
 
             } catch (IOException | SQLException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+
+        editButton.setOnAction(actionEvent ->{
+
+
+            try {
+                Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/UpdateTransport.fxml"));
+
+                show_info.getChildren().removeAll();
+                show_info.getChildren().setAll(fxml);
+
+            } catch (IOException e) {
                 e.printStackTrace();
             }
 

@@ -6,8 +6,10 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import sample.ConnectMSSQL;
 import sample.Route;
 
@@ -42,6 +44,9 @@ public class ShowRoute implements Initializable {
 
     @FXML
     private TableColumn<?, ?> interval_point;
+
+    @FXML
+    private AnchorPane show_info;
 
 
     @FXML
@@ -92,6 +97,22 @@ public class ShowRoute implements Initializable {
                 }
 
             } catch (IOException | SQLException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+
+        edit_btn.setOnAction(actionEvent ->{
+
+
+            try {
+                Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/UpdateRoute.fxml"));
+
+                show_info.getChildren().removeAll();
+                show_info.getChildren().setAll(fxml);
+
+            } catch (IOException e) {
                 e.printStackTrace();
             }
 
