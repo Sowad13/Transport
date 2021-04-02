@@ -11,6 +11,8 @@ import sample.AvailableTransport;
 import sample.ConnectMSSQL;
 import sample.Transport;
 
+import javafx.scene.control.Label;
+
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -41,6 +43,9 @@ public class TransportAvailable implements Initializable  {
     @FXML
     private TableColumn<?, ?> table_TransportCondition;
 
+    @FXML
+    private Label count;
+
     private ObservableList<AvailableTransport> TransportObservableList;
 
     String query;
@@ -69,7 +74,11 @@ public class TransportAvailable implements Initializable  {
         query = "(SELECT Transport.Transport_plate_no,Transport.class_name,Transport.Garage_id,Transport.Insurance,Transport.Transport_condition ,Transport.Capacity  from Transport WHERE Transport.Transport_condition !='Out Of Order') EXCEPT (SELECT Transport.Transport_plate_no,Transport.class_name,Transport.Garage_id,Transport.Insurance,Transport.Transport_condition, Transport.Capacity   from Transport inner join Gets on Transport.Transport_plate_no = Gets.Transport_plate_no)";
         ResultSet rs = statement.executeQuery(query);
 
+        int cnt=0;
+
+
         while(rs.next()) {
+
             System.out.println(rs.getString("class_name"));
             System.out.println(rs.getString("Transport_plate_no"));
             System.out.println(rs.getString("Garage_id"));
@@ -79,7 +88,16 @@ public class TransportAvailable implements Initializable  {
             TransportObservableList.add(new AvailableTransport(rs.getString("Transport_plate_no"), rs.getString("class_name"),
                     rs.getInt("Garage_id"), rs.getBoolean("Insurance"), rs.getInt("Capacity"),rs.getString("Transport_condition")) {
             });
+
+            cnt++;
         }
+
+
+
+        System.out.println(cnt);
+
+       count.setText(String.valueOf(cnt));
+
 
 
     }

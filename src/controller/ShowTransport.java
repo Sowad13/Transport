@@ -7,7 +7,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import sample.AvailableTransport;
 import sample.ConnectMSSQL;
+import sample.Reserve;
 import sample.Transport;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
@@ -43,7 +47,14 @@ public class ShowTransport implements Initializable {
     private TableColumn<?, ?> table_TransportCondition;
 
     @FXML
+    private ImageView refresh;
+
+    @FXML
     private ImageView searchButton;
+
+    @FXML
+    private TextField search;
+
 
     @FXML
     private JFXButton edit_btn;
@@ -70,6 +81,34 @@ public class ShowTransport implements Initializable {
         }
 
         transport_tableView.setItems(TransportObservableList);
+
+        refresh.setOnMouseClicked(c->{
+
+            TransportObservableList.clear();
+
+            try {
+                loadFromDatabase();
+            } catch (SQLException | ClassNotFoundException throwables) {
+                throwables.printStackTrace();
+            }
+
+        });
+
+        searchButton.setOnMouseClicked(click->{
+
+            String s = search.getText();
+
+            try {
+                loadSearchData(s);
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+
 
 
 
@@ -138,10 +177,31 @@ public class ShowTransport implements Initializable {
 
 void save_Data(TransportInput transportInput ) throws SQLException {
 
-    ConnectMSSQL Database = new ConnectMSSQL();
 
-    PreparedStatement statement  =  Database.connectDB().prepareStatement("INSERT INTO Transport VALUES ('"+transportInput.getTransport_plate_No()+"','"+transportInput.getClass_Name()+"','"+transportInput.getGarage_Id()+"','"+transportInput.getInsurance()+"','"+transportInput.getServicing_Cost()+"','"+transportInput.getServicing_query()+"','"+transportInput.getCapacity()+"','"+transportInput.getTransport_Condition()+"')");
-    statement.executeQuery();
+        if(transportInput.getGarage_Id()==-1||transportInput.getServicing_Cost()==-1|| transportInput.getCapacity()==-1){
+
+            showAlert();
+
+        }
+        else{
+
+            String tplate = transportInput.getTransport_plate_No();
+            String classname = transportInput.getClass_Name();
+            int gid = transportInput.getGarage_Id();
+            boolean insurance = transportInput.getInsurance();
+            int tcost = transportInput.getServicing_Cost();
+            boolean tquery = transportInput.getServicing_query();
+            int tcapa = transportInput.getCapacity();
+            String tcondition = transportInput.getTransport_Condition();
+
+            ConnectMSSQL Database = new ConnectMSSQL();
+
+            PreparedStatement statement  =  Database.connectDB().prepareStatement("INSERT INTO Transport VALUES ('"+tplate+"','"+classname+"','"+gid+"','"+insurance+"','"+tcost+"','"+tquery+"','"+tcapa+"','"+tcondition+"')");
+            statement.executeQuery();
+
+
+        }
+
 
 
 
@@ -157,5 +217,37 @@ void save_Data(TransportInput transportInput ) throws SQLException {
 //    System.out.println(transportInput.getServicing_query());
 
 }
+
+
+    private void loadSearchData(String search) throws SQLException, ClassNotFoundException {
+        // transport_tableView.setItems(null);
+        TransportObservableList.clear();
+        ConnectMSSQL Database = new ConnectMSSQL();
+        Statement statement = Database.connectDB().createStatement();
+        query = "select * FROM Transport where Transport.class_name like '%"+search+"%' or Transport.Transport_condition like '%"+search+"%' or Transport.Transport_plate_no like '%"+search+"%'";
+        ResultSet rs = statement.executeQuery(query);
+
+        while (rs.next())
+        {
+
+            TransportObservableList.add(new Transport(rs.getString("Transport_plate_no"), rs.getString("class_name"),
+                    rs.getInt("Garage_id"), rs.getInt("Capacity"),rs.getString("Transport_condition")) {
+            });
+        }
+
+
+
+    }
+
+    private  void  showAlert(){
+        Stage stage = (Stage) add_btn.getScene().getWindow();
+
+        Alert.AlertType type = Alert.AlertType.ERROR;
+        Alert alert = new Alert(type,"Please enter valid number");
+        alert.initModality(Modality.APPLICATION_MODAL);
+        alert.initOwner(stage);
+        alert.showAndWait();
+
+    }
 
 }

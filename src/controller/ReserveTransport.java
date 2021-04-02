@@ -150,7 +150,7 @@ public class ReserveTransport implements Initializable {
 
                inputReserve.apply_btn.setOnAction(actEvent->{
 
-                   if(inputReserve.getReserve_id()==-1||inputReserve.getRenter_duration()==-1)
+                   if(inputReserve.getReserve_id()==-1||inputReserve.getRenter_duration()==-1||inputReserve.getRenter_number()=="-1")
                    {
                        Stage stag = (Stage) inputReserve.apply_btn.getScene().getWindow();
 
