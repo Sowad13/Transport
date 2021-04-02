@@ -5,8 +5,10 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import sample.ConnectMSSQL;
 import sample.Driver;
 import sample.Transport;
@@ -26,6 +28,8 @@ import javafx.scene.image.ImageView;
 public class ShowDriver implements Initializable {
 
 
+    @FXML
+    private AnchorPane show_info;
 
     @FXML
     private TableView<Driver> transport_tableView;
@@ -104,6 +108,22 @@ public class ShowDriver implements Initializable {
                 }
 
             } catch (IOException | SQLException e) {
+                e.printStackTrace();
+            }
+
+
+        });
+
+        edit_btn.setOnAction(actionEvent ->{
+
+
+            try {
+                Parent fxml = FXMLLoader.load(getClass().getResource("../FXML/UpdateDriver.fxml"));
+
+                show_info.getChildren().removeAll();
+                show_info.getChildren().setAll(fxml);
+
+            } catch (IOException e) {
                 e.printStackTrace();
             }
 

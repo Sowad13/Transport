@@ -130,6 +130,7 @@ public class UpdateStaff implements Initializable
 
                 preparedstatement.executeQuery();
 
+
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
